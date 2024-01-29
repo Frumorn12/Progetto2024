@@ -106,7 +106,12 @@
           class="form-control rounded"
           placeholder='Digita il nome di un piatto'
           style="min-width: 225px;"
-          (keyup.enter)="searchOnEnter($event)"
+          #searchInput
+
+
+
+          (keyup.enter)="searchOnEnter($event, searchInput.value)"
+
         />
         <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
       </form>

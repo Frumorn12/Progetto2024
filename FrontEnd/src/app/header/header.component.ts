@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import { AuthServiceService } from '../services/auth-service.service';
 import {FormControl} from "@angular/forms";
 import {map, Observable, startWith} from "rxjs";
+import {Router, RouterModule} from "@angular/router";
+import {PiattiServiceService} from "../piatti-service.service";
 
 declare function getRandomPhoto(): string;
 
@@ -13,20 +15,30 @@ declare function getRandomPhoto(): string;
 
 
 export class HeaderComponent  {
+  searchTerm = new FormControl();
+
+  constructor(private authService: AuthServiceService, private router : Router, private piatti: PiattiServiceService){}
 
 
-  searchOnEnter(event: any): void {
+
+  searchOnEnter(event: any, string: string): void {
     // Verifica che l'evento sia generato dalla pressione del tasto "Invio"
     if (event instanceof KeyboardEvent && event.key === 'Enter') {
       // Chiamare la tua funzione di ricerca qui
-      this.performSearch();
+      this.performSearch(string);
     }
   }
 
   // La tua funzione di ricerca
-  performSearch(): void {
-    // Implementa la logica di ricerca qui
-    console.log('Esegui la ricerca...');
+  performSearch(piatti : string): void {
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
+      this.router.navigate(['/search', piatti]));
+
+
+
+
+
+
   }
 
 
@@ -35,7 +47,6 @@ export class HeaderComponent  {
 
 
 
-  constructor(private authService: AuthServiceService){}
 
 
 

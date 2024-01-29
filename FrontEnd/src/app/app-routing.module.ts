@@ -24,6 +24,7 @@ import {PreferitiComponent} from "./preferiti/preferiti.component";
 import {SezioneMenuVetrinaComponent} from "./sezione-menu-vetrina/sezione-menu-vetrina.component";
 import {CreapiattoComponent} from "./creapiatto/creapiatto.component";
 import {GestioneComponent} from "./gestione/gestione.component";
+import {ComponenteVisioneSearchComponent} from "./componente-visione-search/componente-visione-search.component";
 const routes: Routes = [
   {"path" : "", component:HomeComponent},
   {"path" : "chi_siamo", component:ChiSiamoComponent},
@@ -47,6 +48,7 @@ const routes: Routes = [
   {"path" : "sezione-menu-vetrina", component:SezioneMenuVetrinaComponent},
   {"path" : "crea-piatto", component:CreapiattoComponent},
   {"path" : "gestione", component:GestioneComponent},
+  {"path" : "search/:piatti", component:ComponenteVisioneSearchComponent},
 
 
 

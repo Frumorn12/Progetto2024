@@ -75,6 +75,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ComponenteVisioneSearchComponent } from './componente-visione-search/componente-visione-search.component';
 
 
 //I keep the new line
@@ -116,6 +117,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     CreapiattoComponent,
     HamburgerCardComponent,
     GestioneComponent,
+    ComponenteVisioneSearchComponent,
 
     //I keep the new line
   ],

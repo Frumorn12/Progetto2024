@@ -115,4 +115,9 @@ export class PiattiServiceService {
     var header = { headers: new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token) }
     return this.http.get<Piatto[]>(this.backendUrl + "/preferitiPiatti", header)
   }
+
+  piattiSearch(piatto: string | undefined):Observable<Piatto[]>{
+    var header = { headers: new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token) }
+    return this.http.get<Piatto[]>(this.backendUrl + "/getSearch/"+piatto, header)
+  }
 }
