@@ -1,0 +1,91 @@
+
+
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Il Tuo Ristorante</title>
+  <style>
+    /* Stili CSS rimangono invariati */
+
+    .body{
+      display: flex;
+
+    }
+
+
+
+    .carrello-container {
+
+    }
+  </style>
+</head>
+<body>
+
+<section class="app-routing-module-container">
+  <h3>Antipasti: </h3>
+  <app-menu-card *ngFor="let item of antipasto" [piatto]="item" (piattoAggiunto)="getCarrello()" ></app-menu-card>
+
+  <h3>Primi: </h3>
+  <app-menu-card *ngFor="let item of primo" [piatto]="item" (piattoAggiunto)="getCarrello()"></app-menu-card>
+
+  <h3>Secondi: </h3>
+  <app-menu-card *ngFor="let item of secondo" [piatto]="item" (piattoAggiunto)="getCarrello()"></app-menu-card>
+
+  <h3>Contorni: </h3>
+  <app-menu-card *ngFor="let item of contorno" [piatto]="item" (piattoAggiunto)="getCarrello()"></app-menu-card>
+
+  <h3>Dolci: </h3>
+  <app-menu-card *ngFor="let item of dolce" [piatto]="item" (piattoAggiunto)="getCarrello()"></app-menu-card>
+
+  <h3>Senza Lattosio: </h3>
+  <app-menu-card *ngFor="let item of senzaLattosio" [piatto]="item" (piattoAggiunto)="getCarrello()"></app-menu-card>
+
+  <h3>Senza Glutine: </h3>
+  <app-menu-card *ngFor="let item of senzaGlutine" [piatto]="item" (piattoAggiunto)="getCarrello()"></app-menu-card>
+
+  <h3>Bevande: </h3>
+  <app-menu-card *ngFor="let item of bevanda" [piatto]="item" (piattoAggiunto)="getCarrello()"></app-menu-card>
+
+  <section class="carrello-container " style="position: relative" >
+    <h2>Il tuo carrello</h2>
+
+    <table>
+      <thead>
+      <tr>
+        <th>Prodotto</th>
+        <th>Prezzo</th>
+        <th>Quantità</th>
+        <th>Totale</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of carrello">
+        <td>{{item.nome}}</td>
+        <td>{{item.prezzo}}</td>
+        <td>{{item.quantita}}</td>
+        <td>{{ item.prezzo * item.quantita | currency:'EUR':'symbol':'1.2-2' }}</td>
+      </tr>
+
+      <!-- Aggiungi altre righe per gli altri prodotti nel carrello -->
+      </tbody>
+      <tfoot>
+      <tr>
+        <td colspan="3"><strong>Totale</strong></td>
+        <td><strong>{{ calculateTotal() | currency:'EUR':'symbol':'1.2-2' }}</strong></td>
+      </tr>
+      </tfoot>
+    </table>
+
+    <button class="checkout-btn">Procedi al pagamento</button>
+
+  </section>
+
+</section>
+
+
+
+</body>
+</html>

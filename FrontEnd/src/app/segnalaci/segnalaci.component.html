@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it" class="app-routing-module-container">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatto Ristorante</title>
+  <style>
+    body {
+
+    }
+    form {
+      max-width: 600px;
+      margin: auto;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+    textarea {
+      resize: vertical;
+      height: 150px;
+    }
+    button {
+      background-color: #4CAF50;
+
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<form action="processa_form.php" method="post">
+  <label for="tipo-richiesta">Tipo di Richiesta:</label>
+  <select id="tipo-richiesta" name="tipo-richiesta" required>
+    <option value="Prenotazione">Prenotazione</option>
+    <option value="Feedback">Feedback</option>
+    <option value="Domanda">Domanda</option>
+    <option value="Altro">Altro</option>
+  </select>
+
+  <label for="nome">Nome:</label>
+  <input type="text" id="nome" name="nome" required>
+
+  <label for="cognome">Cognome:</label>
+  <input type="text" id="cognome" name="cognome" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="richiesta">Richiesta:</label>
+  <textarea id="richiesta" name="richiesta" required></textarea>
+
+  <button type="submit">Invia</button>
+</form>
+
+</body>
+</html>

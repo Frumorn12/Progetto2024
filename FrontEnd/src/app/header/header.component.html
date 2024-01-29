@@ -1,0 +1,178 @@
+<!--Main Navigation-->
+<header>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu a Tendina</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      top:0px;
+      right: 15px;
+
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      right: 0;
+      box-shadow: -8px 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      top: 30px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-item {
+      padding: 12px 16px;
+      display: block;
+      text-decoration: none;
+      color: #333;
+      cursor: pointer;
+    }
+
+    .dropdown-item:hover {
+      background-color: #f1f1f1;
+    }
+
+    .icon {
+      margin-right: 8px;
+    }
+
+    .example-form {
+      min-width: 150px;
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .example-full-width {
+      width: 100%;
+    }
+
+    .autocomplete-list li {
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .autocomplete-list li:hover {
+      background-color: #f0f0f0;
+    }
+  </style>
+
+
+  <!-- Navbar -->
+  <nav
+    id="main-navbar"
+    class="navbar navbar-expand-lg navbar-light bg-white fixed-top"
+  >
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#sidebarMenu"
+        aria-controls="sidebarMenu"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Brand -->
+      <a class="navbar-brand" href="#">
+        <img
+          src="https://i.ibb.co/PmDn4H2/chef-1.png"
+          height="30"
+
+          alt=""
+          loading="lazy"
+        />
+      </a>
+
+      <!-- Search form -->
+      <!-- navbar.component.html -->
+
+      <div class="select-wrapper">
+        <select class="form-control search " id="accessibleAutocomplete" title="Scegli una provincia" required>
+          <option selected value="">Scegli una opzione</option>
+        </select>
+      </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          var selectElement = document.querySelector('#accessibleAutocomplete');
+          var selectAutocomplete = new bootstrap.SelectAutocomplete(selectElement, {
+            showAllValues: true,
+            defaultValue: '',
+            autoselect: false,
+            showNoOptionsFound: false,
+            dropdownArrow: () => '',
+          });
+        })
+      </script>
+
+
+
+
+      <!-- Right links -->
+      <ul class="navbar-nav ms-auto d-flex flex-row">
+        <!-- Notification dropdown -->
+
+
+        <!-- Icon -->
+
+        <!-- Icon dropdown -->
+        <!-- Avatar -->
+        <div class="dropdown" *ngIf="isAuthenticated()">
+          <img
+            src="https://i.ibb.co/KmMjqPw/user.png"
+            height="30"
+
+            alt=""
+            loading="lazy"
+          />
+
+          <div class="dropdown-content">
+
+            <a routerLink="preferiti" class="dropdown-item">
+
+              <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                  <path  d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73z"/>
+                </svg>
+              </span> | Preferiti</a>
+
+            <a (click)="doLogout()" class="dropdown-item"><span class="icon">
+               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+              <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+            </svg>
+
+
+            </span> | Logout</a>
+          </div>
+        </div>
+      </ul>
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <!-- Navbar -->
+</header>
+<!--Main Navigation-->
+
+<!--Main layout-->
+<main style="margin-top: 300px">
+  <div class="container pt-4">
+
+  </div>
+</main>
+<!--Main layout-->
