@@ -1,0 +1,242 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+
+header {
+  height: 20px  ;
+
+}
+
+
+
+/*
+img {
+#logo{
+.round{
+header>img{
+#unDiv>img{
+ */
+header>div>img{
+  border-style: solid;
+  border-radius: 20%;
+}
+
+
+
+h1{
+  text-shadow: 2px 2px blue;
+}
+
+nav li{
+  display: inline;
+  padding: 20px;
+  height: 0px;
+  align-items: start;
+
+
+
+}
+
+article{
+  width: 50%;
+  float: left;
+  overflow: hidden;
+}
+
+
+
+nav li:hover{
+  background-color: #ffbf4f;
+}
+
+
+
+
+
+
+
+
+.row{
+  margin-top: 10px !important
+}
+
+/*
+img {
+#logo{
+.round{
+header>img{
+#unDiv>img{
+ */
+.footer-content{
+  margin-top: 300px;
+  margin-right: 10px;
+}
+
+
+
+
+h1{
+  text-shadow: 2px 2px blue;
+}
+
+nav li{
+  display: inline;
+
+}
+
+article{
+  width: 50%;
+  float: left;
+  overflow: hidden;
+}
+
+nav li>a:link, nav li>a:visited {
+  text-decoration: none;
+
+  height: 0px;
+  align-items: start;
+  justify-content: space-between;
+  cursor: pointer;
+
+}
+
+
+footer{
+  clear:left;
+  text-align: right;
+  top: 300000px;
+}
+
+.row{
+  margin-top: 10px !important;
+}
+
+@media screen and (max-width: 300px) {
+  nav li{
+    display: block;
+
+  }
+  article{
+    width: 100%;
+    float: none;
+  }
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 58px 0 0; /* Height of navbar */
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+  width: 220px;
+  z-index: 600;
+
+
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+
+.app-routing-module-container{
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 220px); /* Larghezza totale meno 230px di margine sinistro */
+  margin-left: 220px;
+  height: 100vh;
+
+  position: absolute;
+  top: 60px;
+
+  background-image: url('https://i.ibb.co/pR5cPXx/Jasper-Art-2024-01-21-19-43-12-upscaled.jpg');
+
+
+
+
+
+
+
+
+
+
+}
+
+
+.container-fluid{
+  height: 45px;
+  align-items: start;
+}
+/* ... Your existing CSS styles ... */
+
+.item, .accordion-button{
+  height: 40px !important;
+  width: 100% !important ;
+  background-color: #ffbf4f !important;
+  border-radius: 5px !important;
+  margin-bottom: 5px !important;
+  padding: 5px !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  text-decoration: none !important ;
+  color: #2d3d4d !important;
+  border: 1px solid #3E6D9C !important;
+  font-weight: bold !important;
+}
+
+/* ... Your existing CSS styles ... */
+
+.item1{
+  height: 40px !important;
+  width: 100% !important ;
+  background-color:#2c2987  !important;
+  border-radius: 5px !important;
+  margin-bottom: 5px !important;
+  padding: 5px !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  cursor: pointer !important;
+  text-decoration: none !important ;
+  color: white !important;
+  font-weight: bold !important
+
+}
+
+.app-footer {
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+iframe {
+  width: 100%;
+  height: 100%;
+  max-width: 800px; /* o la larghezza desiderata */
+  max-height: 600px; /* o l'altezza desiderata */
+  margin-bottom: 20px; /* Aggiunge uno spazio inferiore per evitare sovrapposizioni con il footer */
+}
+
+#map {
+  height: 100%;
+}
+
+.vegetable-card {
+  border: 1px solid #ddd;
+
+  cursor: pointer;
+}
+
+.vegetable-name {
+  font-weight: bold;
+}
+
+.vegetable-price {
+  margin-top: 5px;
+}
+
+

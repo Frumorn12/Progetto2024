@@ -1,0 +1,127 @@
+<!-- Nel tuo file HTML -->
+
+<!DOCTYPE html>
+<html lang="en" class="app-routing-module-container">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrazione</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+-
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 700px; /* Imposta la larghezza desiderata */
+      box-sizing: border-box;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+
+    .strength-meter {
+      height: 20px;
+      margin-bottom: 16px;
+      overflow: hidden;
+      border-radius: 4px;
+      background-color: #f0f0f0;
+    }
+
+    .strength-meter div {
+      height: 100%;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Define different colors based on strength (adjust as needed) */
+    .weak { background-color: #ff6347; }
+    .medium { background-color: #ffa500; }
+    .strong { background-color: #008000; }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<form (ngSubmit)="go()"  #myForm="ngForm">
+  <h2>Registrati</h2>
+
+  <!-- Campi del form -->
+  <label for="nome">Nome:</label>
+  <input type="text" id="nome" name="nome" (input)="change()" required [formControl]="nome">
+
+
+
+  <label for="cognome">Cognome:</label>
+  <input type="text" id="cognome" name="cognome" (input)="change()" required [formControl]="cognome">
+
+  <label for="data_nascita">Data di nascita:</label>
+  <input type="date" id="data_nascita" name="data_nascita" (input)="change()" required [formControl]="data">
+
+  <label for="indirizzo">Via:</label>
+  <input type="text" id="indirizzo" name="indirizzo" (input)="change()" required [formControl]="via">
+
+  <label for="civico">Civico:</label>
+  <input type="number" id="civico" name="civico" required (input)="change()" [formControl]="civico">
+
+  <label for="username">Username:</label>
+  <input type="text" id="username"  name="username" required (input)="change()" [formControl]="username">
+
+
+
+  <label for="email">Email:</label>
+  <input type="email" id="email"   name="email" (input)="change()" required [formControl]="email">
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" [(ngModel)]="password" (input)="onPasswordChange()" name="password" required [formControl]="password1">
+
+  <div class="strength-meter">
+    <div [style.width.%]="strength" [ngStyle]="getStrengthColor()">
+      Forza: {{ strength }}%
+    </div>
+
+  </div>
+
+  <button type="submit" [disabled]="!formIsValid || !passwordLengthValid" [ngStyle]="{'background-color': (formIsValid && passwordLengthValid) ? '#4caf50' : '#ddd'}" >Registrati</button>
+  <app-errore-messaggio *ngIf="!formIsValid" [messaggio]="'Inserire tutti i campi'"></app-errore-messaggio>
+  <app-errore-messaggio *ngIf="!passwordLengthValid" [messaggio]="'Password non valida'"></app-errore-messaggio>
+</form>
+
+
+
+
+</body>
+
+</html>

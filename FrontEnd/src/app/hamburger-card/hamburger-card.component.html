@@ -1,0 +1,18 @@
+
+<div class="card w-50 ">
+  <div class="card-body">
+    <h5 class="card-title">{{ ingrediente?.nome }}</h5>
+    <p class="card-text">{{ingrediente?.prezzo}}</p>
+    <a (click)="onCardClick()" class="item" style="background-color: #2c2987 !important; color: white !important; height: 40px !important;">
+
+
+
+
+      <span>Aggiungi</span>
+    </a>
+    <i class="me-3"></i>
+    <button (click)="delete()" class="btn btn-secondary" style="padding: 5px !important; margin-bottom: 5px "> Cancella</button>
+
+  </div>
+</div>
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ricetta del piatto delizioso</title>
+  <style>
+
+    .card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      flex: 1;
+      display: flex;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-right: 20px; /* Aggiunto uno spazio a destra dell'immagine */
+    }
+  </style>
+</head>
+<body class="app-routing-module-container">
+
+<!-- Card dell'immagine e descrizione -->
+<div class="card text-justify">
+  <img [src]="piatto?.immagine" alt="Immagine della ricetta" style="width: 540px">
+  <div>
+    <h2>Descrizione breve della ricetta:</h2>
+    <p>{{piatto?.descrizione}}.</p>
+  </div>
+
+</div>
+
+<!-- Card degli ingredienti -->
+<div class="card ">
+  <h2>Ingredienti:</h2>
+  <ul>
+    {{piatto?.ingredienti}}
+  </ul>
+</div>
+
+<!-- Card della procedura di preparazione -->
+<div class="card text-justify">
+  <h2>Procedura di preparazione:</h2>
+  <ol>
+    {{piatto?.preparazione}}
+  </ol>
+</div>
+
+<div class="card text-justify ">
+
+  <h3>Prezzo</h3>
+  <p>{{piatto?.prezzo}} €</p>
+</div>
+</body>
+</html>

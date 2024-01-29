@@ -1,0 +1,91 @@
+
+
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Il Tuo Ristorante</title>
+  <style>
+    /* Stili CSS rimangono invariati */
+
+    .body{
+      display: flex;
+
+    }
+
+
+
+    .carrello-container {
+
+    }
+  </style>
+</head>
+<body>
+
+<section class="app-routing-module-container" style="background-image: url('https://i.ibb.co/pR5cPXx/Jasper-Art-2024-01-21-19-43-12-upscaled.jpg')">
+  <h3>Base Panino: </h3>
+  <app-hamburger-card *ngFor = "let item of base" [ingrediente]="item" (ingredienteAggiunto)="getCarrello()"></app-hamburger-card>
+
+  <h3>Ingredienti: </h3>
+  <app-hamburger-card *ngFor = "let item of ingrediente" [ingrediente]="item" (ingredienteAggiunto)="getCarrello()"></app-hamburger-card>
+
+
+  <h3>Salsa: </h3>
+  <app-hamburger-card *ngFor = "let item of salsa" [ingrediente]="item" (ingredienteAggiunto)="getCarrello()"></app-hamburger-card>
+
+  <h3>Carne: </h3>
+
+  <app-hamburger-card *ngFor = "let item of carne" [ingrediente]="item" (ingredienteAggiunto)="getCarrello()"></app-hamburger-card>
+
+  <h3>Contorno: </h3>
+  <app-menu-card *ngFor = "let item of contorno" [piatto]="item" (piattoAggiunto)="getCarrello()"></app-menu-card>
+
+ <h3>Bevande: </h3>
+  <app-menu-card *ngFor = "let item of bevanda" [piatto]="item" (piattoAggiunto)="getCarrello()"></app-menu-card>
+
+  <section class="carrello-container " style="position: relative" >
+    <h2>Il tuo carrello</h2>
+
+    <table>
+      <thead>
+      <tr>
+        <th>Prodotto</th>
+        <th>Prezzo</th>
+        <th>Quantità</th>
+        <th>Totale</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of hamburger">
+        <td>{{item.nome}}</td>
+        <td>{{item.prezzo}}</td>
+        <td>{{item.quantita}}</td>
+        <td>{{ item.prezzo * item.quantita | currency:'EUR':'symbol':'1.2-2' }}</td>
+      </tr>
+
+      <!-- Aggiungi altre righe per gli altri prodotti nel carrello -->
+      </tbody>
+      <tfoot>
+      <tr>
+        <td colspan="3"><strong>Totale</strong></td>
+        <td><strong>{{ calculateTotal() | currency:'EUR':'symbol':'1.2-2' }}</strong></td>
+      </tr>
+      </tfoot>
+    </table>
+
+    <button class="checkout-btn">Procedi al pagamento</button>
+
+  </section>
+
+</section>
+
+
+
+
+
+</body>
+
+
+</html>
