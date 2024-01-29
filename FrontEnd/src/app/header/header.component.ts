@@ -12,40 +12,24 @@ declare function getRandomPhoto(): string;
 })
 
 
-export class HeaderComponent  implements OnInit{
+export class HeaderComponent  {
 
-  provinceList: string[] = [
-    'Agrigento',
-    'Alessandria',
-    // Aggiungi altre province qui
-  ];
 
-  items = [
-    { code: '0', name: 'Red' },
-    { code: '1', name: 'Blue' },
-    { code: '2', name: 'Green' },
-    { code: '3', name: 'Yellow' },
-    { code: '4', name: 'Black' },
-    { code: '5', name: 'Purple' },
-    { code: '6', name: 'White' },
-    { code: '7', name: 'Grey' },
-  ];
-
-  ngOnInit(): void {
-    this.populateDropdown();
+  searchOnEnter(event: any): void {
+    // Verifica che l'evento sia generato dalla pressione del tasto "Invio"
+    if (event instanceof KeyboardEvent && event.key === 'Enter') {
+      // Chiamare la tua funzione di ricerca qui
+      this.performSearch();
+    }
   }
 
-  populateDropdown(): void {
-    const selectElement = document.querySelector('#accessibleAutocomplete');
-
-    this.provinceList.forEach(province => {
-      const option = document.createElement('option');
-      option.value = province;
-      option.textContent = province;
-      // @ts-ignore
-      selectElement.appendChild(option);
-    });
+  // La tua funzione di ricerca
+  performSearch(): void {
+    // Implementa la logica di ricerca qui
+    console.log('Esegui la ricerca...');
   }
+
+
 
 
 
@@ -53,10 +37,7 @@ export class HeaderComponent  implements OnInit{
 
   constructor(private authService: AuthServiceService){}
 
-  getRandomPhotoUrl(){
-    console.log(getRandomPhoto());
-    return getRandomPhoto();
-  }
+
 
   isAuthenticated(){
     return this.authService.isAuthenticated();
