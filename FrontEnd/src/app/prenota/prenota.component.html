@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Definizione del set di caratteri e della viewport per la resposività -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Stile CSS -->
   <style>
     body, html {
-
-
-
-
+      /* Nasconde la barra di scorrimento, centra il contenuto verticalmente ed orizzontalmente */
       overflow: hidden;
       display: flex;
       justify-content: center;
@@ -16,14 +16,12 @@
     }
 
     .container {
-
+      /* Layout flessibile per la sezione container */
       display: flex;
-
-
     }
 
     .box {
-
+      /* Configurazione del box */
       flex: 1;
       overflow: hidden;
       cursor: pointer;
@@ -31,32 +29,37 @@
     }
 
     .box img {
-
-
+      /* Stile dell'immagine all'interno del box */
       object-fit: cover;
-      transition: transform 0.5s;
+      transition: transform 0.5s; /* Animazione di transizione sulla trasformazione */
     }
 
     .box:hover img {
-      transform: scale(1.5); /* Aumenta la scala per raggiungere lo schermo intero */
-      z-index: 1; /* Sovrapponi l'immagine al di sopra delle altre */
+      /* Aumenta la scala e sovrapponi l'immagine al passaggio del mouse */
+      transform: scale(1.5);
+      z-index: 1;
     }
   </style>
 </head>
 <body class="app-routing-module-container">
+<!-- Sezione principale del corpo della pagina -->
 <div class="container">
+  <!-- Link alla pagina /prenotazionetavolo -->
   <a routerLink="/prenotazionetavolo">
-  <div class="box" >
-
-      <img src="https://i.ibb.co/vcYsh3z/Whats-App-Image-2024-01-04-at-16-55-23.jpg" alt="Immagine Sinistra" >
-
-  </div>
-  </a>
-    <a routerLink="/prenotazioneasporto">
-    <div class="box" >
-    <img src="https://i.ibb.co/N7FccyW/Nuovo-progetto-7.png" alt="Immagine Destra">
+    <div class="box">
+      <!-- Immagine sinistra con link -->
+      <img src="https://i.ibb.co/vcYsh3z/Whats-App-Image-2024-01-04-at-16-55-23.jpg" alt="Immagine Sinistra">
     </div>
-    </a>
+  </a>
+
+  <!-- Link alla pagina /prenotazioneasporto -->
+  <a routerLink="/prenotazioneasporto">
+    <div class="box">
+      <!-- Immagine destra con link -->
+      <img src="https://i.ibb.co/N7FccyW/Nuovo-progetto-7.png" alt="Immagine Destra">
+    </div>
+  </a>
 </div>
 </body>
 </html>
+
