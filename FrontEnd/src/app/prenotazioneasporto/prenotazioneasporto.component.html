@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="it" class="app-routing-module-container">
 <head>
+  <!-- Imposta la codifica del documento e la viewport per la responsività -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prenotazione D'Asporto</title>
-  <style>
 
+  <!-- Titolo della pagina -->
+  <title>Prenotazione D'Asporto</title>
+
+  <!-- Stili CSS direttamente incorporati nel documento -->
+  <style>
     form {
       max-width: 600px;
       margin: 0 auto;
@@ -45,9 +49,12 @@
 </head>
 <body>
 
+<!-- Inizia il modulo di prenotazione -->
 <form action="#" method="post">
+  <!-- Intestazione del modulo -->
   <h2>Prenotazione D'Asporto</h2>
 
+  <!-- Campi di input per nome, cognome, telefono, e-mail -->
   <label for="nome">Nome:</label>
   <input type="text" id="nome" name="nome" required>
 
@@ -60,8 +67,10 @@
   <label for="email">Indirizzo Email:</label>
   <input type="email" id="email" name="email" required>
 
+  <!-- Sezione per i dettagli dell'ordine -->
   <h3>Dettagli dell'Ordine</h3>
 
+  <!-- Campi di input per data e ora del ritiro e selezione della categoria -->
   <label for="data_ora">Data e Ora del Ritiro:</label>
   <input type="datetime-local" id="data_ora" name="data_ora" required>
 
@@ -71,39 +80,48 @@
     <option value="primi">Primi</option>
   </select>
 
-
-
-
+  <!-- Sezione per le preferenze aggiuntive -->
   <h3>Preferenze Aggiuntive</h3>
 
+  <!-- Campi di input per allergie e richieste speciali -->
   <label for="allergie">Allergie o Intolleranze Alimentari:</label>
   <input type="text" id="allergie" name="allergie">
 
   <label for="richieste_speciali">Richieste Speciali:</label>
   <textarea id="richieste_speciali" name="richieste_speciali" rows="4"></textarea>
 
+  <!-- Sezione per la conferma e l'invio -->
   <h3>Conferma e Invio</h3>
+
+  <!-- Elementi per la modalità di consegna usando un accordion -->
   <div class="accordion" id="menuAccordion1">
     <div class="accordion-item">
       <h2 class="accordion-header" id="menuHeading1">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#menuCollapse1" >
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#menuCollapse1">
           <i class="fas fa-chart-area fa-fw me-3"></i><span>Modalita Consegna</span>
         </button>
       </h2>
       <div id="menuCollapse1" class="accordion-collapse collapse" aria-labelledby="menuHeading1" data-bs-parent="#menuAccordion1">
         <div class="accordion-body">
+          <!-- Collegamenti per la scelta della modalità di consegna -->
           <a class="item1 d-block" routerLink="/antipasti">Ritiro in ristorante</a>
           <a class="item1 d-block" routerLink="/primi">Consegna</a>
 
-          <!-- Aggiungi più elementi del menu se necessario -->
+          <!-- Puoi aggiungere più elementi del menu se necessario -->
         </div>
       </div>
     </div>
   </div>
 
+  <!-- Chiudi il modulo di prenotazione -->
+</form>
+</body>
+</html>
 
 
-  <button type="submit">Invia Prenotazione</button>
+
+
+<button type="submit">Invia Prenotazione</button>
 </form>
 
 </body>
