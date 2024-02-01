@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5434a928-41c9-4de5-a205-d74523470c7e" name="Changes" comment="FIX HTML PRENOTAZIONE">
+    <list default="true" id="5434a928-41c9-4de5-a205-d74523470c7e" name="Changes" comment="RECENSIONE INIZIO">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/piatti-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/piatti-service.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/piatti-vetrina/piatti-vetrina.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/piatti-vetrina/piatti-vetrina.component.html" afterDir="false" />
@@ -78,7 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1706539989728</updated>
       <workItem from="1706539990794" duration="438000" />
-      <workItem from="1706773540778" duration="3735000" />
+      <workItem from="1706773540778" duration="5854000" />
     </task>
     <task id="LOCAL-00001" summary="Commento codice per la ricerca dalla barra">
       <option name="closed" value="true" />
@@ -96,7 +96,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706780119109</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="RECENSIONE INIZIO">
+      <option name="closed" value="true" />
+      <created>1706781015962</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1706781015962</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +124,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commento codice per la ricerca dalla barra" />
     <MESSAGE value="FIX HTML PRENOTAZIONE" />
-    <option name="LAST_COMMIT_MESSAGE" value="FIX HTML PRENOTAZIONE" />
+    <MESSAGE value="RECENSIONE INIZIO" />
+    <option name="LAST_COMMIT_MESSAGE" value="RECENSIONE INIZIO" />
   </component>
 </project>

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {AuthServiceService} from "./services/auth-service.service";
 import {Observable} from "rxjs";
@@ -9,6 +9,8 @@ import {Piatto} from "./model/piatto";
 })
 export class PiattiServiceService {
   private backendUrl = "http://localhost:8080"
+
+
 
   constructor(private http:HttpClient,private auth:AuthServiceService) { }
 
@@ -121,17 +123,27 @@ export class PiattiServiceService {
     return this.http.get<Piatto[]>(this.backendUrl + "/getSearch/"+piatto, header)
   }
 
-  changeRecensione(testoRecensione: string, piatto: string | undefined) {
-    var header = { headers: new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token) }
-    console.log("Invia recensione dentro auth" + testoRecensione)
+  changeRecensione(recensione: string, piatto: string | undefined) {
+
+    console.log("Invia recensione dentro auth" + recensione)
     console.log("Invia recensione dentro auth" + piatto)
     console.log("Invia recensione dentro auth" + this.auth.token)
 
-    this.http.post(this.backendUrl + "/recensioneAdd/"+testoRecensione+"/"+piatto,header).subscribe(
-      res => {
-        console.log(res);
-      }
-    )
+    const header = {headers: new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token)};
 
+    return this.http.get<Boolean>(this.backendUrl + "/recensioneAdd/"+piatto+"/"+recensione,header)
+
+  }
+
+
+  getRecensito(nome: string | undefined) {
+    var header = { headers: new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token) }
+    return this.http.get<boolean>(this.backendUrl + "/getRecensito/"+nome, header)
+
+  }
+
+  getRecensione(nome: string | undefined) {
+    var header = { headers: new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token) }
+    return this.http.get<string>(this.backendUrl + "/getRecensione/"+nome, header)
   }
 }

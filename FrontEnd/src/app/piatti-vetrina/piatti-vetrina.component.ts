@@ -16,6 +16,8 @@ export class PiattiVetrinaComponent implements OnInit{
 
   preferito: boolean = false;
 
+  recensito: boolean = false;
+
   constructor(private piattiService: PiattiServiceService, private aut:AuthServiceService) {
   }
 
@@ -27,6 +29,16 @@ export class PiattiVetrinaComponent implements OnInit{
       },
       (error) => {
         console.error('Errore durante la richiesta del preferito:', error);
+      }
+    );
+
+    this.statoRecensito(this.piatto).subscribe(
+      (recensito) => {
+        this.recensito = recensito;
+        console.log('Recensito ottenuto:', recensito);
+      },
+      (error) => {
+        console.error('Errore durante la richiesta del recensito:', error);
       }
     );
     console.log("Preferito: " + this.piatto?.nome + " " + this.preferito);
@@ -45,14 +57,20 @@ export class PiattiVetrinaComponent implements OnInit{
   }
 
   inviaRecensione() : void {
-    // Aggiungi qui la logica per gestire l'invio della recensione
     console.log("Invia recensione dentro ts" + this.testoRecensione);
-    this.piattiService.changeRecensione(this.testoRecensione, this.piatto?.nome);
-    this.mostraRecensione = false;
+    this.piattiService.changeRecensione(this.testoRecensione, this.piatto?.nome).subscribe(
+      (response) => {
+        console.log(response);
+        this.mostraRecensione = false;
+        this.recensito = true;
+      },
+      (error) => console.log(error)
+    );
+
+
   }
 
   aggiungiPreferiti(piatto: Piatto | undefined){
-    // Aggiungi qui la logica per gestire l'aggiunta della recensione
     console.log("Aggiungi preferiti dentro ts" + piatto?.nome)
 
     this.piattiService.changePreferiti(piatto?.nome);
@@ -75,13 +93,8 @@ export class PiattiVetrinaComponent implements OnInit{
   }
 
 
+  private statoRecensito(piatto: Piatto | undefined) {
+    return this.piattiService.getRecensito(piatto?.nome);
 
-
-
-
-
-
-
-
-
+  }
 }
