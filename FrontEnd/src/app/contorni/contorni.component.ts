@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./contorni.component.css']
 })
 export class ContorniComponent {
-  contorni = 4;
+  contorni = 4;// Proprietà del componente che rappresenta il numero di contorni (valore iniziale: 4)
 
 }

@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./bevande.component.css']
 })
 export class BevandeComponent {
-  bevande = 8;
+  bevande = 8; // Proprietà del componente che rappresenta il numero di bevande (valore iniziale: 8)
 
 }

@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./primi.component.css']
 })
 export class PrimiComponent {
-  primi= 2;
+  primi= 2;// Proprietà del componente che rappresenta il numero di primi (valore iniziale: 2)
 
 
 
