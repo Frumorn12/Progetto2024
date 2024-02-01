@@ -120,4 +120,18 @@ export class PiattiServiceService {
     var header = { headers: new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token) }
     return this.http.get<Piatto[]>(this.backendUrl + "/getSearch/"+piatto, header)
   }
+
+  changeRecensione(testoRecensione: string, piatto: string | undefined) {
+    var header = { headers: new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token) }
+    console.log("Invia recensione dentro auth" + testoRecensione)
+    console.log("Invia recensione dentro auth" + piatto)
+    console.log("Invia recensione dentro auth" + this.auth.token)
+
+    this.http.post(this.backendUrl + "/recensioneAdd/"+testoRecensione+"/"+piatto,header).subscribe(
+      res => {
+        console.log(res);
+      }
+    )
+
+  }
 }

@@ -43,6 +43,7 @@
       <div *ngIf="mostraRecensione" class="text-right">
         <textarea class="form-control mb-2" rows="3" placeholder="Inserisci la tua recensione" [(ngModel)]="testoRecensione"></textarea>
         <button class="btn btn-secondary" (click)="chiudiRecensione()">Chiudi</button>
+        <button class="btn btn-secondary" (click)="inviaRecensione()">Invia</button>
       </div>
     </div>
   </div>

@@ -44,6 +44,13 @@ export class PiattiVetrinaComponent implements OnInit{
     return this.piatto?.tipo != 8;
   }
 
+  inviaRecensione() : void {
+    // Aggiungi qui la logica per gestire l'invio della recensione
+    console.log("Invia recensione dentro ts" + this.testoRecensione);
+    this.piattiService.changeRecensione(this.testoRecensione, this.piatto?.nome);
+    this.mostraRecensione = false;
+  }
+
   aggiungiPreferiti(piatto: Piatto | undefined){
     // Aggiungi qui la logica per gestire l'aggiunta della recensione
     console.log("Aggiungi preferiti dentro ts" + piatto?.nome)
