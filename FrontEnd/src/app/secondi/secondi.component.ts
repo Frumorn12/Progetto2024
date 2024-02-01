@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./secondi.component.css']
 })
 export class SecondiComponent {
-  secondi = 3;
+  secondi = 3;// Proprietà del componente che rappresenta il numero di secondi (valore iniziale: 3)
 
 }
