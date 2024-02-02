@@ -77,6 +77,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ComponenteVisioneSearchComponent } from './componente-visione-search/componente-visione-search.component';
 import { CarrelloComponent } from './carrello/carrello.component';
+import { GestioneRecensioniComponent } from './gestione-recensioni/gestione-recensioni.component';
 
 
 //I keep the new line
@@ -120,6 +121,7 @@ import { CarrelloComponent } from './carrello/carrello.component';
     GestioneComponent,
     ComponenteVisioneSearchComponent,
     CarrelloComponent,
+    GestioneRecensioniComponent,
 
     //I keep the new line
   ],

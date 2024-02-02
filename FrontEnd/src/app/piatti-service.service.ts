@@ -3,7 +3,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {AuthServiceService} from "./services/auth-service.service";
 import {Observable} from "rxjs";
 import {Piatto} from "./model/piatto";
-import {Recensione} from "./model/recensione";
+import {Recensione, RecensioneCompleta} from "./model/recensione";
 
 @Injectable({
   providedIn: 'root'
@@ -148,5 +148,10 @@ export class PiattiServiceService {
     return this.http.get<Recensione>(this.backendUrl + `/getRecensione/`+ nome , header)
 
 
+  }
+
+  getAllRecensioni() {
+    var header = { headers: new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token) }
+    return this.http.get<RecensioneCompleta[]>(this.backendUrl + `/getRecensione`, header)
   }
 }
