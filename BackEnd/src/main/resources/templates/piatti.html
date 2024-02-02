@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elenco Piatti</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/validate.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 20px;
+        }
+
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            text-align: left;
+        }
+
+        .btn-group {
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="btn-group">
+    <input id="btn_cancella" class="btn btn-danger" type="button" value="Cancella" />
+    <input id="btn_salva" class="btn btn-success" type="button" value="Salva" />
+</div>
+
+<div>
+    <h3>Aggiungi un nuovo piatto</h3>
+    <form method="post" action="../addPiatto">
+        <label for="nome_piatto">Nome Piatto:</label>
+        <input id="nome_piatto" type="text" name="nome_piatto" class="form-control" />
+        <br/>
+        <label for="ingredienti_piatto">Ingredienti:</label>
+        <textarea id="ingredienti_piatto" placeholder="Inserisci gli ingredienti"
+                  name="ingredienti_piatto" class="form-control"></textarea>
+        <br/>
+        <label for="descrizione_piatto">Descrizione Piatto:</label>
+        <textarea id="descrizione_piatto" placeholder="Inserisci la descrizione"
+                  name="descrizione_piatto" class="form-control"></textarea>
+        <br/>
+        <label for="preparazione_piatto">Preparazione Piatto:</label>
+        <textarea id="preparazione_piatto" placeholder="Inserisci la preparazione"
+                  name="preparazione_piatto" class="form-control"></textarea>
+        <br/>
+        <label for="tipo_piatto">Tipo Piatto:</label>
+        <input id="tipo_piatto" type="text" name="tipo_piatto" class="form-control" />
+        <br/>
+        <label for="immagine_piatto">URL Immagine Piatto:</label>
+        <input id="immagine_piatto" type="text" name="immagine_piatto" class="form-control" />
+        <br/>
+        <label for="prezzo_piatto">Prezzo Piatto:</label>
+        <input id="prezzo_piatto" type="text" name="prezzo_piatto" class="form-control" />
+        <br/>
+        <input id="btn_verifica" type="button" class="btn btn-warning" value="Verifica Dati" />
+        <input id="btn_aggiungi" type="button" class="btn btn-success" value="Aggiungi Piatto alla lista" />
+        <input type="submit" class="btn btn-primary" value="Salva" />
+        <input type="reset" class="btn btn-danger" />
+    </form>
+</div>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th></th>
+
+        <th>Nome</th>
+        <th>Ingredienti</th>
+        <th>Descrizione</th>
+        <th>Preparazione</th>
+        <th>Tipo</th>
+        <th>Immagine</th>
+        <th>Prezzo</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- foreach Piatto -->
+    <tr th:each="piatto : ${lista_piatti}" th:nome="|p${piatto.nome}|">
+        <td><input type="checkbox"  th:value="${piatto.nome}" /></td>
+        <td th:text="${piatto.nome}"></td>
+        <td th:text="${piatto.ingredienti}"></td>
+        <td th:text="${piatto.descrizione}"></td>
+        <td th:text="${piatto.preparazione}" ></td>
+
+        <td th:text="${piatto.tipo}"></td>
+        <td th:text="${piatto.immagine}"></td>
+        <td th:text="${piatto.prezzo}"></td>
+    </tr>
+    <!-- /foreach Piatto -->
+    </tbody>
+</table>
+
+
+
+</body>
+</html>
