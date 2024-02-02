@@ -4,24 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5434a928-41c9-4de5-a205-d74523470c7e" name="Changes" comment="RECENSIONE AGGIUNTO INVIO RECENSIONE E CAMBIO TASTO">
-      <change afterPath="$PROJECT_DIR$/src/app/carrello/carrello.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/carrello/carrello.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/carrello/carrello.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/carrello/carrello.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/model/immagini.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/model/recensione.ts" afterDir="false" />
+    <list default="true" id="5434a928-41c9-4de5-a205-d74523470c7e" name="Changes" comment="AGGIUSTAMENTO CREA PIATTO">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/creapiatto/creapiatto.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/creapiatto/creapiatto.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/creapiatto/creapiatto.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/creapiatto/creapiatto.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/hamburger-card/hamburger-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/hamburger-card/hamburger-card.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/hamburger-card/hamburger-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/hamburger-card/hamburger-card.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/html-create/html-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/html-create/html-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/html-create/html-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/html-create/html-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/gestione-recensioni/gestione-recensioni.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/gestione-recensioni/gestione-recensioni.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/gestione/gestione.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/gestione/gestione.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/model/recensione.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/model/recensione.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/piatti-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/piatti-service.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/registrazione/registrazione.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/registrazione/registrazione.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/hamburger-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/hamburger-service.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,25 +40,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/andre/Downloads/progetto (1)/progetto/ProgettoBackEnd",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.Angular CLI Server.executor": "Run",
-    "ts.external.directory.path": "C:\\Users\\andre\\IdeaProjects\\Progetto2024\\FrontEnd\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/andre/Downloads/progetto (1)/progetto/ProgettoBackEnd&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.Angular CLI Server.executor&quot;: &quot;Run&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\andre\\IdeaProjects\\Progetto2024\\FrontEnd\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="npm.Angular CLI Server">
     <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
@@ -104,7 +92,7 @@
       <workItem from="1706539990794" duration="438000" />
       <workItem from="1706773540778" duration="8528000" />
       <workItem from="1706797652776" duration="11161000" />
-      <workItem from="1706866773059" duration="4393000" />
+      <workItem from="1706866773059" duration="7201000" />
     </task>
     <task id="LOCAL-00001" summary="Commento codice per la ricerca dalla barra">
       <option name="closed" value="true" />
@@ -138,7 +126,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706783201961</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="AGGIUSTAMENTO CREA PIATTO">
+      <option name="closed" value="true" />
+      <created>1706871694749</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1706871694749</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +157,7 @@
     <MESSAGE value="FIX HTML PRENOTAZIONE" />
     <MESSAGE value="RECENSIONE INIZIO" />
     <MESSAGE value="RECENSIONE AGGIUNTO INVIO RECENSIONE E CAMBIO TASTO" />
-    <option name="LAST_COMMIT_MESSAGE" value="RECENSIONE AGGIUNTO INVIO RECENSIONE E CAMBIO TASTO" />
+    <MESSAGE value="AGGIUSTAMENTO CREA PIATTO" />
+    <option name="LAST_COMMIT_MESSAGE" value="AGGIUSTAMENTO CREA PIATTO" />
   </component>
 </project>

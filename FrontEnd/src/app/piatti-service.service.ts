@@ -154,4 +154,5 @@ export class PiattiServiceService {
     var header = { headers: new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token) }
     return this.http.get<RecensioneCompleta[]>(this.backendUrl + `/getRecensione`, header)
   }
+
 }

@@ -4,5 +4,6 @@ export interface Recensione{
 export interface RecensioneCompleta{
   recensione : string;
   username: string;
+  piatto: string;
 
 }

@@ -54,7 +54,7 @@
   <!-- Qui dovresti iterare sugli utenti dal database e popolare la tabella -->
   <tr *ngFor="let item of utente">
     <td>{{item.username}}</td>
-    <td>{{item.tipo}}</td>
+    <td>{{item.tipo }}</td>
     <td>{{item.email }}</td>
     <td class="action-buttons">
       <button (click)="bannaUtente(item.username)">Banna Utente</button>
