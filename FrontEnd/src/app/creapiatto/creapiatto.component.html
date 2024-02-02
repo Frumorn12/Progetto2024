@@ -10,16 +10,49 @@
   <style>
     /* Stili CSS rimangono invariati */
 
-    .body{
-      display: flex;
 
+
+    body {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      height: 100vh; /* Imposta l'altezza del body al 100% della viewport */
+    }
+
+    .carrello-container, .immagine {
+      position: fixed;
+      padding: 20px;
+      z-index: 1000;
     }
 
 
 
     .carrello-container {
+      position: fixed;
+      margin-top: 50px ;
+      top: 0;
+      right: 0;
+      padding: 20px;
+      background-color: #fff;
+      z-index: 1000;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 
     }
+
+    .immagine{
+      position: fixed;
+      top: 0;
+      margin-left: 500px;
+      margin-top:  30px ;
+
+      padding: 20px;
+      z-index: 1000;
+    }
+
+
+
+
   </style>
 </head>
 <body>
@@ -45,7 +78,10 @@
  <h3>Bevande: </h3>
   <app-menu-card *ngFor = "let item of bevanda" [piatto]="item" (piattoAggiunto)="getCarrello()"></app-menu-card>
 
-  <section class="carrello-container " style="position: relative" >
+
+
+  <section class="carrello-container "  >
+
     <h2>Il tuo carrello</h2>
 
     <table>
@@ -55,6 +91,7 @@
         <th>Prezzo</th>
         <th>Quantità</th>
         <th>Totale</th>
+
       </tr>
       </thead>
       <tbody>
@@ -76,6 +113,10 @@
     </table>
 
     <button class="checkout-btn">Procedi al pagamento</button>
+
+
+
+
 
   </section>
 

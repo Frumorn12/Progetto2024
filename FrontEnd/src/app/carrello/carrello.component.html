@@ -1,0 +1,33 @@
+<section class="carrello-container " style="position: relative" >
+  <h2>Il tuo carrello</h2>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Prodotto</th>
+      <th>Prezzo</th>
+      <th>Quantità</th>
+      <th>Totale</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of calculateTotal()">
+      <td>{{item.nome}}</td>
+      <td>{{item.prezzo}}</td>
+      <td>{{item.quantita}}</td>
+      <td>{{ item.prezzo * item.quantita | currency:'EUR':'symbol':'1.2-2' }}</td>
+    </tr>
+
+    <!-- Aggiungi altre righe per gli altri prodotti nel carrello -->
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="3"><strong>Totale</strong></td>
+      <td><strong>{{ calculateTotal() | currency:'EUR':'symbol':'1.2-2' }}</strong></td>
+    </tr>
+    </tfoot>
+  </table>
+
+  <button class="checkout-btn">Procedi al pagamento</button>
+
+</section>

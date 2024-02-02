@@ -76,6 +76,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { ComponenteVisioneSearchComponent } from './componente-visione-search/componente-visione-search.component';
+import { CarrelloComponent } from './carrello/carrello.component';
 
 
 //I keep the new line
@@ -118,6 +119,7 @@ import { ComponenteVisioneSearchComponent } from './componente-visione-search/co
     HamburgerCardComponent,
     GestioneComponent,
     ComponenteVisioneSearchComponent,
+    CarrelloComponent,
 
     //I keep the new line
   ],

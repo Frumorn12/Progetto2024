@@ -4,6 +4,7 @@ import {Ingrediente} from "../model/ingrediente";
 import {Piatto} from "../model/piatto";
 import {HamburgerServiceService} from "../services/hamburger-service.service";
 import {Hamburger} from "../model/hamburger";
+import {Immagini} from "../model/immagini";
 
 @Component({
   selector: 'app-creapiatto',
@@ -20,6 +21,7 @@ export class CreapiattoComponent implements OnInit{
   contorno?:Piatto[]
   bevanda?:Piatto[]
   hamburger?:Hamburger[]
+  immagini?: Immagini[];
 
 
   constructor(private piattiService:PiattiServiceService, private hamburgerService:HamburgerServiceService){}
@@ -28,6 +30,7 @@ export class CreapiattoComponent implements OnInit{
   ngOnInit(){
     this.getIngredienti();
     this.getCarrello();
+
   }
 
   private getIngredienti() {
@@ -56,6 +59,9 @@ export class CreapiattoComponent implements OnInit{
   public getCarrello(){
     this.hamburgerService.getHamburger().subscribe
     (hamburger => this.hamburger = hamburger);
+    this.getImmagini();
+
+
   }
 // Metodo per calcolare il totale del carrello
   calculateTotal(){
@@ -65,4 +71,10 @@ export class CreapiattoComponent implements OnInit{
   }
 
 
+  private getImmagini() {
+    this.hamburgerService.dammiImmagini().subscribe(
+      immagini => this.immagini = immagini
+    );
+
+  }
 }

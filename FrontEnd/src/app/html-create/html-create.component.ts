@@ -13,6 +13,8 @@ export class HtmlCreateComponent implements OnInit{
   name: string | null = this.route.snapshot.paramMap.get('name');
   piatto : Piatto | null = null ;
 
+  recensione: String = '';
+
 
 
 
@@ -22,6 +24,17 @@ export class HtmlCreateComponent implements OnInit{
   ngOnInit(): void {
     // Retrieve the ID parameter from the route
     this.caricaPiattoDesiderato(this.name!)
+
+    this.piattiservice.getRecensione(this.name!).subscribe(
+      (recensito) => {
+        this.recensione = recensito.recensione;
+        console.log('Recensito ottenuto:', recensito);
+      },
+      (error) => {
+        console.error('Errore durante la richiesta del recensito:', error);
+      }
+    )
+
 
   }
   caricaPiattoDesiderato(nomePiatto: string): void {

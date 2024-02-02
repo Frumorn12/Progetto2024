@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {AuthServiceService} from "./auth-service.service";
 import {Ingrediente} from "../model/ingrediente";
 import {Hamburger} from "../model/hamburger";
+import {Immagini} from "../model/immagini";
 
 @Injectable({
   providedIn: 'root'
@@ -61,4 +62,17 @@ export class HamburgerServiceService {
     return this.http.get<Hamburger[]>(this.backendUrl + "/getHamburger",header)
 
   }
+
+  dammiImmagini() {
+    var header = {
+      headers: new HttpHeaders().set('Authorization', 'Basic ' +  this.auth.token)
+    }
+    return this.http.get<Immagini[]>(this.backendUrl + "/immagini",header)
+
+  }
+  dammiImmagine(nome: string | undefined) {
+    var header = {
+      headers: new HttpHeaders().set('Authorization', 'Basic ' +  this.auth.token)
+    }
+    return this.http.get<Immagini>(this.backendUrl + "/immagine/"+nome,header)}
 }
