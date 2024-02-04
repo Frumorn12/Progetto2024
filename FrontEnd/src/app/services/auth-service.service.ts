@@ -98,4 +98,8 @@ export class AuthServiceService {
   }
 
 
+  printList() {
+    this.http.post(this.backendUrl + "/printList",{withCredentials: true})
+    return true;
+  }
 }

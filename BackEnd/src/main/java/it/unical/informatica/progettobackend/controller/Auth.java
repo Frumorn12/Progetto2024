@@ -127,6 +127,13 @@ public class Auth {
 
 
     }
+
+    @GetMapping("/printList")
+    public boolean printList(){
+        System.out.println("STAMPO LISTA");
+        DBManager.getInstance().getUtenteDao().getAllRec();
+        return true;
+    }
     public Utente getUserByToken(String token){
 
 

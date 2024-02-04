@@ -88,6 +88,7 @@
     <tr>
         <th></th>
 
+
         <th>Nome</th>
         <th>Ingredienti</th>
         <th>Descrizione</th>
@@ -95,20 +96,31 @@
         <th>Tipo</th>
         <th>Immagine</th>
         <th>Prezzo</th>
+
     </tr>
     </thead>
     <tbody>
     <!-- foreach Piatto -->
     <tr th:each="piatto : ${lista_piatti}" th:nome="|p${piatto.nome}|">
-        <td><input type="checkbox"  th:value="${piatto.nome}" /></td>
+
+
+        <td>
+            <input type="checkbox"  />
+        </td>
+
+
+
         <td th:text="${piatto.nome}"></td>
         <td th:text="${piatto.ingredienti}"></td>
         <td th:text="${piatto.descrizione}"></td>
-        <td th:text="${piatto.preparazione}" ></td>
-
+        <td th:text="${piatto.preparazione}"></td>
         <td th:text="${piatto.tipo}"></td>
         <td th:text="${piatto.immagine}"></td>
         <td th:text="${piatto.prezzo}"></td>
+
+
+
+
     </tr>
     <!-- /foreach Piatto -->
     </tbody>
@@ -116,5 +128,16 @@
 
 
 
+
+
+
+
+
+
+
+
 </body>
+
+
+
 </html>

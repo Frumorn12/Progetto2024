@@ -1,3 +1,5 @@
+import {Recensione, RecensioneCompleta} from "./recensione";
+
 export interface Piatto{
 
   nome:string;
@@ -7,6 +9,7 @@ export interface Piatto{
   tipo:number;
   immagine:string;
   prezzo:number;
+  recensioni:RecensioneCompleta[];
 
 
 }

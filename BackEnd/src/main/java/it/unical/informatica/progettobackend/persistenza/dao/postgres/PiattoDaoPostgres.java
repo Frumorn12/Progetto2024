@@ -4,10 +4,10 @@ package it.unical.informatica.progettobackend.persistenza.dao.postgres;
 
 import it.unical.informatica.progettobackend.persistenza.dao.PiattoDao;
 import it.unical.informatica.progettobackend.persistenza.model.Piatto;
+import it.unical.informatica.progettobackend.persistenza.model.RecensioneCompleta;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 public class PiattoDaoPostgres implements PiattoDao {
@@ -49,10 +49,20 @@ public class PiattoDaoPostgres implements PiattoDao {
         try {
             Statement st = connection.createStatement();
             String query = "select * from piatti";
+            System.out.println("query finda all: " + query);
 
             ResultSet rs = st.executeQuery(query);
             while (rs.next()){
-                Piatto piatto = (new Piatto(rs.getString("nome"), rs.getString("descrizione"), rs.getString("ingredienti"), rs.getString("preparazione"), rs.getInt("tipo"), rs.getString("immagine"), rs.getDouble("prezzo")));
+                Piatto piatto = new Piatto();
+                piatto.setNome(rs.getString("nome"));
+                piatto.setDescrizione(rs.getString("descrizione"));
+                piatto.setIngredienti(rs.getString("ingredienti"));
+                piatto.setPreparazione(rs.getString("preparazione"));
+                piatto.setTipo(rs.getInt("tipo"));
+                piatto.setImmagine(rs.getString("immagine"));
+                piatto.setPrezzo(rs.getDouble("prezzo"));
+
+
                 piattiLista.add(piatto);
             }
         } catch (SQLException e) {
@@ -98,7 +108,15 @@ public class PiattoDaoPostgres implements PiattoDao {
 
             List<Piatto> piatti = new ArrayList<>();
             while (rs.next()) {
-                Piatto piatto = new Piatto(rs.getString("nome"), rs.getString("descrizione"), rs.getString("ingredienti"), rs.getString("preparazione"), rs.getInt("tipo"), rs.getString("immagine"), rs.getDouble("prezzo"));
+                Piatto piatto = new PiattoProxy(connection);
+                piatto.setNome(rs.getString("nome"));
+                piatto.setDescrizione(rs.getString("descrizione"));
+                piatto.setIngredienti(rs.getString("ingredienti"));
+                piatto.setPreparazione(rs.getString("preparazione"));
+                piatto.setTipo(rs.getInt("tipo"));
+                piatto.setImmagine(rs.getString("immagine"));
+                piatto.setPrezzo(rs.getDouble("prezzo"));
+
                 piatti.add(piatto);
 
             }
@@ -120,7 +138,15 @@ public class PiattoDaoPostgres implements PiattoDao {
 
             List<Piatto> piatti = new ArrayList<>();
             while (rs.next()) {
-                Piatto piatto = new Piatto(rs.getString("nome"), rs.getString("descrizione"), rs.getString("ingredienti"), rs.getString("preparazione"), rs.getInt("tipo"), rs.getString("immagine"), rs.getDouble("prezzo"));
+                Piatto piatto = new PiattoProxy(connection);
+                piatto.setNome(rs.getString("nome"));
+                piatto.setDescrizione(rs.getString("descrizione"));
+                piatto.setIngredienti(rs.getString("ingredienti"));
+                piatto.setPreparazione(rs.getString("preparazione"));
+                piatto.setTipo(rs.getInt("tipo"));
+                piatto.setImmagine(rs.getString("immagine"));
+                piatto.setPrezzo(rs.getDouble("prezzo"));
+
                 piatti.add(piatto);
 
             }
@@ -143,7 +169,15 @@ public class PiattoDaoPostgres implements PiattoDao {
 
             List<Piatto> piatti = new ArrayList<>();
             while (rs.next()) {
-                Piatto piatto = new Piatto(rs.getString("nome"), rs.getString("descrizione"), rs.getString("ingredienti"), rs.getString("preparazione"), rs.getInt("tipo"), rs.getString("immagine"), rs.getDouble("prezzo"));
+                Piatto piatto = new PiattoProxy(connection);
+                piatto.setNome(rs.getString("nome"));
+                piatto.setDescrizione(rs.getString("descrizione"));
+                piatto.setIngredienti(rs.getString("ingredienti"));
+                piatto.setPreparazione(rs.getString("preparazione"));
+                piatto.setTipo(rs.getInt("tipo"));
+                piatto.setImmagine(rs.getString("immagine"));
+                piatto.setPrezzo(rs.getDouble("prezzo"));
+
                 piatti.add(piatto);
             }
 
@@ -164,7 +198,15 @@ public class PiattoDaoPostgres implements PiattoDao {
 
             List<Piatto> piatti = new ArrayList<>();
             while (rs.next()) {
-                Piatto piatto = new Piatto(rs.getString("nome"), rs.getString("descrizione"), rs.getString("ingredienti"), rs.getString("preparazione"), rs.getInt("tipo"), rs.getString("immagine"), rs.getDouble("prezzo"));
+                Piatto piatto = new PiattoProxy(connection);
+                piatto.setNome(rs.getString("nome"));
+                piatto.setDescrizione(rs.getString("descrizione"));
+                piatto.setIngredienti(rs.getString("ingredienti"));
+                piatto.setPreparazione(rs.getString("preparazione"));
+                piatto.setTipo(rs.getInt("tipo"));
+                piatto.setImmagine(rs.getString("immagine"));
+                piatto.setPrezzo(rs.getDouble("prezzo"));
+
                 piatti.add(piatto);
             }
 
@@ -185,7 +227,15 @@ public class PiattoDaoPostgres implements PiattoDao {
 
             List<Piatto> piatti = new ArrayList<>();
             while (rs.next()) {
-                Piatto piatto = new Piatto(rs.getString("nome"), rs.getString("descrizione"), rs.getString("ingredienti"), rs.getString("preparazione"), rs.getInt("tipo"), rs.getString("immagine"), rs.getDouble("prezzo"));
+                Piatto piatto = new PiattoProxy(connection);
+                piatto.setNome(rs.getString("nome"));
+                piatto.setDescrizione(rs.getString("descrizione"));
+                piatto.setIngredienti(rs.getString("ingredienti"));
+                piatto.setPreparazione(rs.getString("preparazione"));
+                piatto.setTipo(rs.getInt("tipo"));
+                piatto.setImmagine(rs.getString("immagine"));
+                piatto.setPrezzo(rs.getDouble("prezzo"));
+
                 piatti.add(piatto);
             }
 
@@ -206,7 +256,15 @@ public class PiattoDaoPostgres implements PiattoDao {
 
             List<Piatto> piatti = new ArrayList<>();
             while (rs.next()) {
-                Piatto piatto = new Piatto(rs.getString("nome"), rs.getString("descrizione"), rs.getString("ingredienti"), rs.getString("preparazione"), rs.getInt("tipo"), rs.getString("immagine"), rs.getDouble("prezzo"));
+                Piatto piatto = new PiattoProxy(connection);
+                piatto.setNome(rs.getString("nome"));
+                piatto.setDescrizione(rs.getString("descrizione"));
+                piatto.setIngredienti(rs.getString("ingredienti"));
+                piatto.setPreparazione(rs.getString("preparazione"));
+                piatto.setTipo(rs.getInt("tipo"));
+                piatto.setImmagine(rs.getString("immagine"));
+                piatto.setPrezzo(rs.getDouble("prezzo"));
+
                 piatti.add(piatto);
             }
 
@@ -227,7 +285,15 @@ public class PiattoDaoPostgres implements PiattoDao {
 
             List<Piatto> piatti = new ArrayList<>();
             while (rs.next()) {
-                Piatto piatto = new Piatto(rs.getString("nome"), rs.getString("descrizione"), rs.getString("ingredienti"), rs.getString("preparazione"), rs.getInt("tipo"), rs.getString("immagine"), rs.getDouble("prezzo"));
+                Piatto piatto = new PiattoProxy(connection);
+                piatto.setNome(rs.getString("nome"));
+                piatto.setDescrizione(rs.getString("descrizione"));
+                piatto.setIngredienti(rs.getString("ingredienti"));
+                piatto.setPreparazione(rs.getString("preparazione"));
+                piatto.setTipo(rs.getInt("tipo"));
+                piatto.setImmagine(rs.getString("immagine"));
+                piatto.setPrezzo(rs.getDouble("prezzo"));
+
                 piatti.add(piatto);
             }
 
@@ -248,7 +314,15 @@ public class PiattoDaoPostgres implements PiattoDao {
 
             List<Piatto> piatti = new ArrayList<>();
             while (rs.next()) {
-                Piatto piatto = new Piatto(rs.getString("nome"), rs.getString("descrizione"), rs.getString("ingredienti"), rs.getString("preparazione"), rs.getInt("tipo"), rs.getString("immagine"), rs.getDouble("prezzo"));
+                Piatto piatto = new PiattoProxy(connection);
+                piatto.setNome(rs.getString("nome"));
+                piatto.setDescrizione(rs.getString("descrizione"));
+                piatto.setIngredienti(rs.getString("ingredienti"));
+                piatto.setPreparazione(rs.getString("preparazione"));
+                piatto.setTipo(rs.getInt("tipo"));
+                piatto.setImmagine(rs.getString("immagine"));
+                piatto.setPrezzo(rs.getDouble("prezzo"));
+
                 piatti.add(piatto);
             }
 
@@ -269,13 +343,21 @@ public class PiattoDaoPostgres implements PiattoDao {
             ps.setString(1, name);
             ResultSet rs = ps.executeQuery();
 
-            Piatto piatto = null;
+            Piatto piatto = new PiattoProxy(connection);
             while (rs.next()) {
-                piatto = new Piatto(rs.getString("nome"), rs.getString("descrizione"), rs.getString("ingredienti"), rs.getString("preparazione"), rs.getInt("tipo"), rs.getString("immagine"), rs.getDouble("prezzo"));
+                piatto.setNome(rs.getString("nome"));
+                piatto.setDescrizione(rs.getString("descrizione"));
+                piatto.setIngredienti(rs.getString("ingredienti"));
+                piatto.setPreparazione(rs.getString("preparazione"));
+                piatto.setTipo(rs.getInt("tipo"));
+                piatto.setImmagine(rs.getString("immagine"));
+                piatto.setPrezzo(rs.getDouble("prezzo"));
+
+
 
             }
-
             return piatto;
+
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
@@ -294,13 +376,43 @@ public class PiattoDaoPostgres implements PiattoDao {
 
             List<Piatto> piatti = new ArrayList<>();
             while (rs.next()) {
-                Piatto piatto = new Piatto(rs.getString("nome"), rs.getString("descrizione"), rs.getString("ingredienti"),
-                        rs.getString("preparazione"), rs.getInt("tipo"), rs.getString("immagine"), rs.getDouble("prezzo"));
-                piatto.PRINT();
+                Piatto piatto = new PiattoProxy(connection);
+                piatto.setNome(rs.getString("nome"));
+                piatto.setDescrizione(rs.getString("descrizione"));
+                piatto.setIngredienti(rs.getString("ingredienti"));
+                piatto.setPreparazione(rs.getString("preparazione"));
+                piatto.setTipo(rs.getInt("tipo"));
+                piatto.setImmagine(rs.getString("immagine"));
+                piatto.setPrezzo(rs.getDouble("prezzo"));
+
                 piatti.add(piatto);
+
             }
 
             return piatti;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public List<RecensioneCompleta> getRecensioni(PiattoProxy piattoProxy) {
+        try {
+            Statement st = connection.createStatement();
+            String query = "select * from recensioni where piatto = ?";
+
+            PreparedStatement ps = connection.prepareStatement(query);
+            ps.setString(1, piattoProxy.getNome());
+            ResultSet rs = ps.executeQuery();
+
+            List<RecensioneCompleta> recensioni = new ArrayList<>();
+            while (rs.next()) {
+                RecensioneCompleta recensione  = new RecensioneCompleta(rs.getString("recensione"), rs.getString("utente"), rs.getString("piatto"));
+                recensioni.add(recensione);
+            }
+
+            return recensioni;
         } catch (SQLException e) {
             e.printStackTrace();
             return null;

@@ -24,4 +24,8 @@ public interface HamburgerDao {
     List<Immagine> getImmagine(String user);
 
     Immagine getImmagineSingola(String username, String nome);
+
+    List<Ingredienti> getContorni();
+
+    List<Ingredienti> getBevande();
 }

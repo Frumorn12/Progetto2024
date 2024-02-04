@@ -78,6 +78,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { ComponenteVisioneSearchComponent } from './componente-visione-search/componente-visione-search.component';
 import { CarrelloComponent } from './carrello/carrello.component';
 import { GestioneRecensioniComponent } from './gestione-recensioni/gestione-recensioni.component';
+import {PrenotazioneServiceService} from "./services/prenotazione-service.service";
 
 
 //I keep the new line
@@ -170,7 +171,7 @@ import { GestioneRecensioniComponent } from './gestione-recensioni/gestione-rece
     MatTooltipModule
 
   ],
-  providers: [PiattiServiceService, UtenteServiceService],
+  providers: [PiattiServiceService, UtenteServiceService, PrenotazioneServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

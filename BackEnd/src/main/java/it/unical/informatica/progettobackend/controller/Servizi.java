@@ -252,6 +252,18 @@ public class Servizi {
         return DBManager.getInstance().getHamburgerDao().getSalsa();
     }
 
+    @GetMapping("/contorno1")
+    public List<Ingredienti> getContorni(HttpServletRequest req){
+        return DBManager.getInstance().getHamburgerDao().getContorni();
+    }
+
+
+
+    @GetMapping("/bevande1")
+    public List<Ingredienti> getBevande(HttpServletRequest req){
+        return DBManager.getInstance().getHamburgerDao().getBevande();
+    }
+
     @GetMapping("/addIngrediente/{nome}/{prezzo}/{token}")
     public boolean addIngrediente(HttpServletRequest req, @PathVariable String nome, @PathVariable double prezzo, @PathVariable String token){
         System.out.println("CIRO NAPOLETANO ORSO CINESE");
@@ -327,19 +339,6 @@ public class Servizi {
         return DBManager.getInstance().getHamburgerDao().getImmagine(Auth.getInstance().getUserByToken(token).getUsername());
     }
 
-    @GetMapping("/immagine/{nome}")
-    public Immagine getImmagine(HttpServletRequest req, @PathVariable String nome){
-        String auth = req.getHeader("Authorization");
-        System.out.println(auth);
-        String token = auth.substring("Basic ".length());
-
-
-        Immagine immagine = DBManager.getInstance().getHamburgerDao().getImmagineSingola(Auth.getInstance().getUserByToken(token).getUsername(), nome);
-        System.out.println(nome);
-        System.out.println("SONO DENTRO GET IMMAGINE : " + immagine.getImmagine()+" " + nome);
-
-        return DBManager.getInstance().getHamburgerDao().getImmagineSingola(Auth.getInstance().getUserByToken(token).getUsername(), nome);
-    }
 
     @GetMapping("/getRecensione")
     public List<RecensioneCompleta> getRecensione(HttpServletRequest req){
