@@ -14,10 +14,24 @@
       display: flex;
 
     }
+    .carrello-container, .immagine {
+      position: fixed;
+      padding: 20px;
+      z-index: 1000;
+    }
 
 
 
     .carrello-container {
+      position: fixed;
+      margin-top: 50px ;
+      top: 0;
+      right: 0;
+      padding: 20px;
+      background-color: #fff;
+      z-index: 1000;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 
     }
   </style>
@@ -25,6 +39,31 @@
 <body>
 
 <section class="app-routing-module-container">
+
+  <form (ngSubmit)="go()" method="post">
+    <!-- Intestazione del modulo -->
+    <h2>Prenotazione Asporto</h2>
+
+    <!-- Campi di input per nome, cognome, telefono, e-mail -->
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required [formControl]="nome">
+
+
+    <label for="telefono">Numero di Telefono:</label>
+    <input type="tel" id="telefono" name="telefono" required [formControl]="telefono">
+
+    <!-- Campi di input per data e ora della prenotazione e commenti aggiuntivi -->
+    <label for="data_ora">Data e Ora della Prenotazione:</label>
+    <input type="datetime-local" id="data_ora" name="data_ora" required [formControl]="data">
+
+       <!-- Sezione per la conferma e l'invio -->
+
+
+    <!-- Pulsante di invio del modulo -->
+
+
+
+
   <h3>Antipasti: </h3>
   <app-menu-card *ngFor="let item of antipasto" [piatto]="item" (piattoAggiunto)="getCarrello()" ></app-menu-card>
 
@@ -49,7 +88,7 @@
   <h3>Bevande: </h3>
   <app-menu-card *ngFor="let item of bevanda" [piatto]="item" (piattoAggiunto)="getCarrello()"></app-menu-card>
 
-  <section class="carrello-container " style="position: relative" >
+  <section class="carrello-container " >
     <h2>Il tuo carrello</h2>
 
     <table>
@@ -79,10 +118,12 @@
       </tfoot>
     </table>
 
-    <button class="checkout-btn">Procedi al pagamento</button>
+    <button type="submit">Invia Prenotazione</button>
+
+
 
   </section>
-
+  </form>
 </section>
 
 

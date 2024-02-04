@@ -1,6 +1,8 @@
 package it.unical.informatica.progettobackend.persistenza.dao;
 
+import it.unical.informatica.progettobackend.persistenza.dao.postgres.PiattoProxy;
 import it.unical.informatica.progettobackend.persistenza.model.Piatto;
+import it.unical.informatica.progettobackend.persistenza.model.RecensioneCompleta;
 
 import java.util.List;
 
@@ -38,4 +40,6 @@ public interface PiattoDao {
 
 
     List<Piatto> getSearch(String stringa);
+
+    List<RecensioneCompleta> getRecensioni(PiattoProxy piattoProxy);
 }

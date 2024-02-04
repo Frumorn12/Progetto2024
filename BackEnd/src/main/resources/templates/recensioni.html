@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th></th>
+
+
+        <th>Username</th>
+        <th>Recensione</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <!-- foreach Piatto -->
+    <tr th:each="recensioni : ${recensioni}" th:username="|p${recensioni.username}|">
+
+
+        <td>
+            <input type="checkbox"  />
+        </td>
+
+
+
+        <td th:text="${recensioni.username}"></td>
+        <td th:text="${recensioni.recensione}"></td>
+
+
+
+
+    </tr>
+    <!-- /foreach Piatto -->
+    </tbody>
+</table>
+
+</body>
+</html>

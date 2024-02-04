@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ricetta del piatto delizioso</title>
   <style>
-
     .card {
       border: 1px solid #ccc;
       border-radius: 8px;
@@ -20,7 +19,13 @@
       max-width: 100%;
       height: auto;
       border-radius: 8px;
-      margin-right: 20px; /* Aggiunto uno spazio a destra dell'immagine */
+      margin-right: 20px;
+    }
+
+    .divider {
+      border-top: 1px solid #ccc;
+      margin-top: 10px;
+      padding-top: 10px;
     }
   </style>
 </head>
@@ -33,11 +38,10 @@
     <h2>Descrizione breve della ricetta:</h2>
     <p>{{piatto?.descrizione}}.</p>
   </div>
-
 </div>
 
 <!-- Card degli ingredienti -->
-<div class="card ">
+<div class="card">
   <h2>Ingredienti:</h2>
   <ul>
     {{piatto?.ingredienti}}
@@ -52,16 +56,23 @@
   </ol>
 </div>
 
-<div class="card text-justify ">
-
+<div class="card text-justify">
   <h3>Prezzo</h3>
   <p>{{piatto?.prezzo}} €</p>
 </div>
 
-<div class="card text-justify ">
+<!-- Card delle recensioni -->
+<div class="card text-justify">
+  <h3>Recensioni:</h3>
+  <div *ngFor="let recensione of piatto?.recensioni; let last = last">
+    <p><strong>Utente:</strong> {{recensione.username}}</p>
+    <p><strong>Recensione:</strong> {{recensione.recensione}}</p>
+    <!-- Puoi aggiungere altri dettagli della recensione qui -->
 
-  <h3>Recensione</h3>
-  <p>{{recensione}}</p>
+    <!-- Aggiunta del divisorio se non è l'ultima recensione -->
+    <div *ngIf="!last" class="divider"></div>
   </div>
+</div>
+
 </body>
 </html>

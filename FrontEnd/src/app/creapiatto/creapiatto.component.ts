@@ -18,8 +18,9 @@ export class CreapiattoComponent implements OnInit{
   ingrediente?:Ingrediente[]
   salsa?:Ingrediente[]
   carne?:Ingrediente[]
-  contorno?:Piatto[]
-  bevanda?:Piatto[]
+  contorno?:Ingrediente[]
+  bevande?:Ingrediente[]
+
   hamburger?:Hamburger[]
   immagini?: Immagini[];
 
@@ -48,11 +49,13 @@ export class CreapiattoComponent implements OnInit{
       carne => this.carne = carne
     );
     // Chiamate ai servizi per ottenere contorni e bevande
-    this.piattiService.dammiContorni().subscribe
-    (piatti => this.contorno = piatti);
+    this.hamburgerService.dammiContorno().subscribe(
+      contorno => this.contorno = contorno
+    );
 
-    this.piattiService.dammiBevande().subscribe
-    (piatti => this.bevanda = piatti);
+    this.hamburgerService.dammiBevande().subscribe(
+      bevande => this.bevande = bevande
+    );
 
   }
 // Metodo pubblico per ottenere il carrello dal servizio

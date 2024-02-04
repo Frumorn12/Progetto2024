@@ -73,10 +73,11 @@
   <app-hamburger-card *ngFor = "let item of carne" [ingrediente]="item" (ingredienteAggiunto)="getCarrello()"></app-hamburger-card>
 
   <h3>Contorno: </h3>
-  <app-menu-card *ngFor = "let item of contorno" [piatto]="item" (piattoAggiunto)="getCarrello()"></app-menu-card>
+  <app-hamburger-card *ngFor = "let item of contorno" [ingrediente]="item" (ingredienteAggiunto)="getCarrello()"></app-hamburger-card>
 
- <h3>Bevande: </h3>
-  <app-menu-card *ngFor = "let item of bevanda" [piatto]="item" (piattoAggiunto)="getCarrello()"></app-menu-card>
+
+  <h3>Bevande: </h3>
+  <app-hamburger-card *ngFor = "let item of bevande" [ingrediente]="item" (ingredienteAggiunto)="getCarrello()"></app-hamburger-card>
 
 
 

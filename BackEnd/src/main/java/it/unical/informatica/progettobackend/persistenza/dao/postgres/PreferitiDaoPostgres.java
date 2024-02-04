@@ -135,7 +135,15 @@ public class PreferitiDaoPostgres implements PreferitiDao {
                     st2.setString(1, rs.getString("piatto"));
                     ResultSet rs2 = st2.executeQuery();
                     if (rs2.next()) {
-                        Piatto piatto = new Piatto(rs2.getString("nome"), rs2.getString("descrizione"), rs2.getString("ingredienti"), rs2.getString("preparazione"), rs2.getInt("tipo"), rs2.getString("immagine"), rs2.getDouble("prezzo"));
+                        Piatto piatto = new PiattoProxy(connection);
+                        piatto.setNome(rs.getString("nome"));
+                        piatto.setDescrizione(rs.getString("descrizione"));
+                        piatto.setIngredienti(rs.getString("ingredienti"));
+                        piatto.setPreparazione(rs.getString("preparazione"));
+                        piatto.setTipo(rs.getInt("tipo"));
+                        piatto.setImmagine(rs.getString("immagine"));
+                        piatto.setPrezzo(rs.getDouble("prezzo"));
+
                         piatti.add(piatto);
                     }
                 } catch (SQLException e) {

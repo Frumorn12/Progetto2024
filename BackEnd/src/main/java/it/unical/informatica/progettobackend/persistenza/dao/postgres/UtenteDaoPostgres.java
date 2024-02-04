@@ -173,4 +173,22 @@ public class UtenteDaoPostgres implements UtenteDao {
         }
         return utenti;
     }
+
+    public void getAllRec() {
+        try{
+            Statement st = connection.createStatement();
+            String query = "r.*  from " +
+                    "utente u, recensioni r " +
+                    "where u.username = ? " +
+                    "   r.utente = u.username";
+            PreparedStatement pr = connection.prepareStatement(query);
+            pr.setString(1, "topolino");
+            ResultSet rs = pr.executeQuery();
+            while(rs.next()){
+                System.out.println(rs.getString("recensione") + " " + rs.getString("utente"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

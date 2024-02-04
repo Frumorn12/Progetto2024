@@ -1,4 +1,4 @@
-
+ 
 
 function calculateStrength(password) {
   // Calcola la forza in base alla lunghezza della password

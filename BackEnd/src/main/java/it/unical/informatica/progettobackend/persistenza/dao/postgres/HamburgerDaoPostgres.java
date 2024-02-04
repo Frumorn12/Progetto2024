@@ -14,7 +14,7 @@ import java.util.List;
 
 public class HamburgerDaoPostgres implements HamburgerDao {
 
-    //Tipo : Base = 1, Carne = 2, Salsa = 3, Ingredienti = 4
+    //Tipo : Base = 1, Carne = 2, Salsa = 3, Ingredienti = 4, Contorni = 5, Bevande = 6
 
     Connection connection;
 
@@ -188,6 +188,44 @@ public class HamburgerDaoPostgres implements HamburgerDao {
             throw new RuntimeException(e);
         }
         return null;
+    }
+
+    @Override
+    public List<Ingredienti> getContorni() {
+        System.out.println("ENTRO IN CONTORNI");
+
+        try{
+            List<Ingredienti> contorni = new ArrayList<>();
+            String query = "SELECT * FROM piatti WHERE tipo = '4'";
+            PreparedStatement statement = connection.prepareStatement(query);
+            ResultSet result = statement.executeQuery();
+            System.out.println("ENTRO IN CONTORNI");
+            while (result.next()) {
+                System.out.println("NOME CONTORNO: " + result.getString("nome"));
+                contorni.add(new Ingredienti(result.getString("nome"), result.getString("immagine"), result.getDouble("prezzo")));
+            }
+            return contorni;
+        } catch (SQLException e) {
+            return null;
+        }
+
+    }
+
+    @Override
+    public List<Ingredienti> getBevande() {
+        System.out.println("ENTRO IN BEVANDE");
+        try{
+            List<Ingredienti> bevande = new ArrayList<>();
+            String query = "SELECT * FROM piatti WHERE tipo = '8'";
+            PreparedStatement statement = connection.prepareStatement(query);
+            ResultSet result = statement.executeQuery();
+            while (result.next()) {
+                bevande.add(new Ingredienti(result.getString("nome"), result.getString("immagine"), result.getDouble("prezzo")));
+            }
+            return bevande;
+        } catch (SQLException e) {
+            return null;
+        }
     }
 
     public int getQuantita (String username, String piatto) {

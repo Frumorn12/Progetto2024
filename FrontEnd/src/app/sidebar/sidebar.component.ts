@@ -36,7 +36,8 @@ export class SidebarComponent implements OnInit {
 
   printUser(){
 
-    console.log("STAMPO ADMIN: " + this.auth.isAuthenticatedAsAdmin());
+
+    console.log("STAMPO ADMIN: " + this.auth.printList());
   }
 
 }

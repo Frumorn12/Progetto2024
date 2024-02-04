@@ -19,6 +19,8 @@ public class Piatto {
 
     private double prezzo;
 
+    private List<RecensioneCompleta> recensioni;
+
 
 
 
@@ -38,19 +40,6 @@ public class Piatto {
     }
 
 
-    public Piatto(String nome, String descrizione, String ingredienti, String preparazione, int tipo, String immagine, double prezzo) {
-
-        this.nome = nome;
-        this.ingredienti = ingredienti;
-        this.descrizione = descrizione;
-
-        this.preparazione = preparazione;
-        this.tipo = tipo;
-        this.immagine = immagine;
-        this.prezzo = prezzo;
-
-
-    }
 
 
 
@@ -113,6 +102,10 @@ public class Piatto {
         this.prezzo = prezzo;
     }
 
+    public List<RecensioneCompleta> getRecensioni() {
+        return recensioni;
+    }
+
     public void PRINT(){
         System.out.println("Nome: "+nome);
         System.out.println("Descrizione: "+descrizione);
@@ -123,4 +116,7 @@ public class Piatto {
         System.out.println("Prezzo: "+prezzo);
     }
 
+    protected void setRecensioni(List<RecensioneCompleta> recs) {
+        recensioni = recs;
+    }
 }

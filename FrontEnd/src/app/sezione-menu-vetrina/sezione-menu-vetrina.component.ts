@@ -3,6 +3,7 @@ import {Piatto} from "../model/piatto";
 import {PiattiServiceService} from "../piatti-service.service";
 import {CarrelloServiceService} from "../services/carrello-service.service";
 import {Carrello} from "../model/carrello";
+import {FormControl} from "@angular/forms";
 
 @Component({
   selector: 'app-sezione-menu-vetrina',
@@ -19,6 +20,9 @@ export class SezioneMenuVetrinaComponent implements OnInit{
   senzaGlutine?:Piatto[]
   bevanda?:Piatto[]
   carrello?:Carrello[]
+  nome = new FormControl();
+  telefono = new FormControl();
+  data = new FormControl();
 
 
 
@@ -60,5 +64,9 @@ export class SezioneMenuVetrinaComponent implements OnInit{
   calculateTotal(): number {
     // @ts-ignore
     return this.carrello.reduce((total, item) => total + item.prezzo * item.quantita, 0);
+  }
+
+  go(){
+
   }
 }

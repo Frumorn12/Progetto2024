@@ -75,4 +75,19 @@ export class HamburgerServiceService {
       headers: new HttpHeaders().set('Authorization', 'Basic ' +  this.auth.token)
     }
     return this.http.get<Immagini>(this.backendUrl + "/immagine/"+nome,header)}
+
+  dammiContorno() {
+    var header = {
+      headers: new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token)}
+    return this.http.get<Ingrediente[]>(this.backendUrl + "/contorno1",header)}
+
+
+  dammiBevande() {
+    var header = {
+      headers: new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token)}
+    return this.http.get<Ingrediente[]>(this.backendUrl + "/bevande1",header)
+
+  }
+
+
 }
