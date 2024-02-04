@@ -70,6 +70,28 @@
         text-align: center;
         color: #777;
       }
+
+      .elemento-da-scivolare {
+        font-size: 20px; /* Imposta la dimensione del font desiderata */
+        text-decoration: none; /* Rimuovi la sottolineatura */
+        display: inline-block; /* Imposta l'elemento come blocco inline */
+        border-bottom: 1px solid transparent; /* Rimuovi la sottolineatura predefinita */
+      }
+
+      /* Aggiungi questa regola per animare l'aspetto della linea durante la scrittura */
+      .elemento-da-scivolare.typed-cursor {
+        border-bottom: 1px solid #000; /* Aggiungi colore e stile alla linea durante la scrittura */
+        animation: blink 0.7s infinite; /* Aggiungi un'animazione lampeggiante */
+      }
+
+      @keyframes blink {
+        0%, 100% {
+          border-color: transparent; /* Colore della linea durante la pausa */
+        }
+        50% {
+          border-color: #000; /* Colore della linea durante la scrittura */
+        }
+      }
     </style>c
   </head>
   <body>
@@ -79,6 +101,8 @@
   </header>
 
   <main>
+    <div class="elemento-da-scivolare"></div>
+
     <h2>La Nostra Storia</h2>
     <p>Il Krusty Krab è più di un semplice ristorante; è un'icona gastronomica, una leggenda nei mari. Fondato nel cuore dell'Oceano Pacifico, il Krusty Krab è rinomato per la sua cucina marinara di alta qualità e l'atmosfera unica.</p>
 

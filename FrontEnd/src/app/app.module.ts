@@ -80,6 +80,9 @@ import { CarrelloComponent } from './carrello/carrello.component';
 import { GestioneRecensioniComponent } from './gestione-recensioni/gestione-recensioni.component';
 import {PrenotazioneServiceService} from "./services/prenotazione-service.service";
 
+import Typed from 'typed.js';
+
+
 
 //I keep the new line
 
@@ -168,7 +171,7 @@ import {PrenotazioneServiceService} from "./services/prenotazione-service.servic
     MatGridListModule,
     MatRadioModule,
     MatDatepickerModule,
-    MatTooltipModule
+    MatTooltipModule,
 
   ],
   providers: [PiattiServiceService, UtenteServiceService, PrenotazioneServiceService],

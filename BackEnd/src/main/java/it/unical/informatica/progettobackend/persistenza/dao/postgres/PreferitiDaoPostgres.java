@@ -120,41 +120,40 @@ public class PreferitiDaoPostgres implements PreferitiDao {
     }
 
     @Override
-
     public List<Piatto> findAllPreferiti(String username) {
         try {
-            String query = "select * from preferiti where utente = ? and stato = true";
+            String query = "SELECT * FROM preferiti WHERE utente = ? AND stato = true";
             PreparedStatement st = connection.prepareStatement(query);
             st.setString(1, username);
             ResultSet rs = st.executeQuery();
-            List<Piatto> piatti = new ArrayList<>( );
-            while (rs.next()) {
-                try{
-                    String query2 = "select * from piatti where nome = ?";
-                    PreparedStatement st2 = connection.prepareStatement(query2);
-                    st2.setString(1, rs.getString("piatto"));
-                    ResultSet rs2 = st2.executeQuery();
-                    if (rs2.next()) {
-                        Piatto piatto = new PiattoProxy(connection);
-                        piatto.setNome(rs.getString("nome"));
-                        piatto.setDescrizione(rs.getString("descrizione"));
-                        piatto.setIngredienti(rs.getString("ingredienti"));
-                        piatto.setPreparazione(rs.getString("preparazione"));
-                        piatto.setTipo(rs.getInt("tipo"));
-                        piatto.setImmagine(rs.getString("immagine"));
-                        piatto.setPrezzo(rs.getDouble("prezzo"));
+            List<Piatto> piatti = new ArrayList<>();
 
-                        piatti.add(piatto);
+            while (rs.next()) {
+                try {
+                    String piattoName = rs.getString("piatto");
+
+                    String query2 = "SELECT * FROM piatti WHERE nome = ?";
+                    PreparedStatement st2 = connection.prepareStatement(query2);
+                    st2.setString(1, piattoName);
+                    ResultSet rs2 = st2.executeQuery();
+
+                    if (rs2.next()) {
+                        Piatto p = new PiattoProxy(connection);
+                        p.setNome(rs2.getString("nome"));
+                        p.setDescrizione(rs2.getString("descrizione"));
+                        p.setPreparazione(rs2.getString("preparazione"));
+                        p.setIngredienti(rs2.getString("ingredienti"));
+                        p.setTipo(rs2.getInt("tipo"));
+                        p.setImmagine(rs2.getString("immagine"));
+                        p.setPrezzo(rs2.getDouble("prezzo"));
+                        piatti.add(p);
                     }
                 } catch (SQLException e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
-
             }
             return piatti;
         } catch (SQLException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
             return null;
         }
