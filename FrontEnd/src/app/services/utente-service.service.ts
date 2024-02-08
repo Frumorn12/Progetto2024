@@ -55,4 +55,18 @@ export class UtenteServiceService {
 
 
   }
+
+  segnalaci(value5: any,value: any, value2: any, value3: any, value4: any) {
+    const headers = new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token);
+
+    this.http.post(this.backendUrl + "/segnalaci/"+value5+"/"+value+"/"+value2+"/"+value3+"/"+value4, { headers }).subscribe(
+      (response) => {
+        console.log("Segnalato",response);
+      },
+      (error) => {
+        console.error('Errore durante la segnalazione:', error);
+      }
+    );
+
+  }
 }

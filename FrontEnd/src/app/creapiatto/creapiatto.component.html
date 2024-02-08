@@ -113,7 +113,18 @@
       </tfoot>
     </table>
 
-    <button class="checkout-btn">Procedi al pagamento</button>
+    <div>
+      <label>Tipo di consegna:</label>
+      <input type="radio" name="tipoConsegna" value="consegnaCasa" [(ngModel)]="tipoConsegna" style="margin-left: 10px" checked> Consegna in casa
+      <input type="radio" name="tipoConsegna" value="ritiroRistorante" [(ngModel)]="tipoConsegna" required> Ritiro al ristorante
+    </div>
+
+    <div>
+      <label>Data e Ora: </label>
+      <input type="datetime-local" name="dataOra" [(ngModel)]="dataOra"  style="margin-left: 10px" required>
+    </div>
+
+    <button type="submit" (click)="go()">Invia Prenotazione</button>
 
 
 

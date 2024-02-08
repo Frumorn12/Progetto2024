@@ -3,6 +3,7 @@ package it.unical.informatica.progettobackend.persistenza.dao.postgres;
 import it.unical.informatica.progettobackend.persistenza.dao.UtenteDao;
 import it.unical.informatica.progettobackend.persistenza.model.Utente;
 import it.unical.informatica.progettobackend.persistenza.model.UtenteCompleto;
+import it.unical.informatica.progettobackend.persistenza.model.UtenteVia;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -101,9 +102,8 @@ public class UtenteDaoPostgres implements UtenteDao {
             pr.setString(7, via);
             pr.setInt(8, civico);
             pr.setString(9, email);
-            ResultSet rs = pr.executeQuery();
+            pr.executeUpdate();
             return true;
-
 
 
 
@@ -153,6 +153,25 @@ public class UtenteDaoPostgres implements UtenteDao {
         }
     }
 
+    @Override
+    public void segnalaci(String richiesta, String nome, String cognome, String email, String commenti) {
+        try{
+            Statement st = connection.createStatement();
+
+            String query = "insert into segnalazioni values(?,?,?,?,?)";
+            PreparedStatement pr = connection.prepareStatement(query);
+            pr.setString(1, richiesta);
+            pr.setString(2, nome);
+            pr.setString(3, cognome);
+            pr.setString(4, email);
+            pr.setString(5, commenti);
+
+            ResultSet rs = pr.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+    }}
+
+
     public List<UtenteCompleto> getAllUtente() {
         List<UtenteCompleto> utenti = new ArrayList<>();
         try{
@@ -190,5 +209,28 @@ public class UtenteDaoPostgres implements UtenteDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public UtenteVia getUtenteCompleto(String username){
+        UtenteVia utente = new UtenteVia();
+        try{
+            Statement st = connection.createStatement();
+            String query = "select * from utenti where username = ?";
+            PreparedStatement pr = connection.prepareStatement(query);
+            pr.setString(1, username);
+            ResultSet rs = pr.executeQuery();
+            if(rs.next()){
+                   utente.setUsername(rs.getString("username"));
+                    utente.setEmail(rs.getString("email"));
+                    utente.setNome(rs.getString("nome"));
+                    utente.setCognome(rs.getString("cognome"));
+                    utente.setVia(rs.getString("via"));
+                    utente.setCivico(rs.getInt("civico"));
+
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return utente;
     }
 }

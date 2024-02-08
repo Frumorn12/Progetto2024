@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestione Utenti</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: white; /* Imposta il colore di sfondo a bianco */
+    }
+
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    .action-buttons button {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body class="app-routing-module-container">
+
+<h2>Gestione Utenti</h2>
+
+<!-- Form per aggiungere un nuovo utente -->
+<!-- Tabella per visualizzare gli utenti -->
+<h3>Lista Utenti</h3>
+<table>
+  <thead>
+  <tr>
+    <th>Nome</th>
+    <th>Cognome</th>
+    <th>Telefono</th>
+    <th>Email</th>
+    <th>Data</th>
+    <th>Commenti</th>
+    <th>Azioni</th>
+  </tr>
+  </thead>
+  <tbody>
+  <!-- Qui dovresti iterare sugli utenti dal database e popolare la tabella -->
+  <tr *ngFor="let item of prenotazioni">
+
+    <td>{{item.nome}}</td>
+    <td>{{item.cognome }}</td>
+    <td>{{item.telefono}}</td>
+    <td>{{item.email}}</td>
+    <td>{{item.data}}</td>
+    <td>{{item.commenti}}</td>
+
+    <td class="action-buttons"  *ngIf="!item.accettato && !item.rifiutato">
+      <div >
+      <button  (click)="accetta(item.id)" [disabled]="(item.accettato||item.rifiutato)" >Accetta</button>
+      <button  (click)="rifiuta(item.id)" [disabled]="(item.accettato||item.rifiutato)">Rifiuta</button>
+      </div>
+
+    </td>
+  </tr>
+  <!-- Altri utenti... -->
+  </tbody>
+</table>
+
+
+
+</body>
+</html>

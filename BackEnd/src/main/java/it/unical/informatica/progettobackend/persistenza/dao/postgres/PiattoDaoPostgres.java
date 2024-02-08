@@ -418,4 +418,37 @@ public class PiattoDaoPostgres implements PiattoDao {
             return null;
         }
     }
+
+    @Override
+    public void deletePiatto(String nomeRicetta) {
+        try {
+            String query = "DELETE FROM piatti WHERE nome = ?";
+            PreparedStatement st = connection.prepareStatement(query);
+            st.setString(1, nomeRicetta);
+            st.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Override
+    public void aggiungiPiatto(String nomePiatto, String ingredientiPiatto, String descrizionePiatto, String preparazionePiatto, int tipoPiatto, String immaginePiatto, double prezzoPiatto) {
+        try {
+            String query = "INSERT INTO piatti (nome, ingredienti, descrizione, preparazione, tipo, immagine, prezzo) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            PreparedStatement st = connection.prepareStatement(query);
+            st.setString(1, nomePiatto);
+            st.setString(2, ingredientiPiatto);
+            st.setString(3, descrizionePiatto);
+            st.setString(4, preparazionePiatto);
+            st.setInt(5, tipoPiatto);
+            st.setString(6, immaginePiatto);
+            st.setDouble(7, prezzoPiatto);
+            st.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }

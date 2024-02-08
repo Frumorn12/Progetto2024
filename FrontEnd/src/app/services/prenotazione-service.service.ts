@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {AuthServiceService} from "./auth-service.service";
+import {Prenotazione} from "../model/prenotazione";
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,66 @@ export class PrenotazioneServiceService {
 
   constructor(private http:HttpClient,private auth:AuthServiceService) { }
 
-  prenota(nome: string, cognome: string, email: string, telefono: string, data: string, commenti: string) {
-    const headers = new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token);
-    return this.http.post(this.backendUrl + "/prenota/"+nome+"/"+cognome+"/"+email+"/"+telefono+"/"+data+"/"+commenti, { headers });
+  prendiDate(){
+
+    var header = {
+      headers: new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token)
+
+
+    }
+
+    return this.http.get<string[]>(this.backendUrl+"/prenotazioni/date", header);
+  }
+
+  mettiPrenotazioneTavola(value1: any, value2: any, value3: any, value4: any, value5: any, value: any){
+    var header = {
+      headers: new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token)
+
+
+    }
+    this.http.post(this.backendUrl + "/prenotazioni/tavola/" + value1 + "/" + value2 + "/" + value3 + "/" + value4 + "/" + value5 + "/" + value, null, header).subscribe(
+      data => {
+        console.log("POST Request is successful ", data);
+      },
+      error => {
+        console.log("Error", error);
+      }
+    )
+
+  }
+
+  getAllPrenotazione() {
+    var header = {
+      headers: new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token)
+
+
+    }
+    return this.http.get<Prenotazione[]>(this.backendUrl + "/prenotazioni/tutte", header);
+
+  }
+
+  accettaPrenotazione(id: number) {
+    var header = {
+      headers: new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token)
+
+
+    }
+    return this.http.post(this.backendUrl + "/prenotazioni/accetta/" + id, header);
+
+
+  }
+
+  rifiutaPrenotazione(id: number) {
+    var header = {
+      headers: new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token)
+    }
+    return this.http.post(this.backendUrl + "/prenotazioni/rifiuta/" + id, header);}
+
+  getAllPrenotazioneUtente() {
+    var header = {
+      headers: new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token)
+    }
+    return this.http.get<Prenotazione[]>(this.backendUrl + "/prenotazioni/utente", header);
+
   }
 }

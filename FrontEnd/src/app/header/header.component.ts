@@ -51,7 +51,7 @@ export class HeaderComponent  {
 
 
   isAuthenticated(){
-    return this.authService.isAuthenticated();
+    return this.authService.isAuthenticated() ;
   }
   doLogout(){
     console.log("click");
@@ -59,4 +59,7 @@ export class HeaderComponent  {
   }
 
 
+  isAuthenticatedAsAdmin() {
+    return this.authService.isAuthenticatedAsAdmin();
+  }
 }

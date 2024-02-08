@@ -4,6 +4,7 @@ import {PiattiServiceService} from "../piatti-service.service";
 import {CarrelloServiceService} from "../services/carrello-service.service";
 import {Carrello} from "../model/carrello";
 import {FormControl} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-sezione-menu-vetrina',
@@ -23,11 +24,14 @@ export class SezioneMenuVetrinaComponent implements OnInit{
   nome = new FormControl();
   telefono = new FormControl();
   data = new FormControl();
+  tipoConsegna: string = "";
+  consegna: boolean = false;
+  dataOra: string = "";
 
 
 
 
-  constructor(private piattiService:PiattiServiceService, private carrelloService:CarrelloServiceService){}
+  constructor(private piattiService:PiattiServiceService, private carrelloService:CarrelloServiceService, private router : Router){}
   ngOnInit(){
     this.getPiatti();
     this.getCarrello();
@@ -67,6 +71,14 @@ export class SezioneMenuVetrinaComponent implements OnInit{
   }
 
   go(){
+
+    if (this.tipoConsegna == "consegna"){
+      this.consegna = false;
+    } else {
+      this.consegna = true;
+    }
+    this.carrelloService.prenota(this.dataOra, this.consegna)
+    this.router.navigate(['/']);
 
   }
 }

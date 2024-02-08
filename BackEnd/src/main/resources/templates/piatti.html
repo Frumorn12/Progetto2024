@@ -44,14 +44,11 @@
 </head>
 <body>
 
-<div class="btn-group">
-    <input id="btn_cancella" class="btn btn-danger" type="button" value="Cancella" />
-    <input id="btn_salva" class="btn btn-success" type="button" value="Salva" />
-</div>
+
 
 <div>
     <h3>Aggiungi un nuovo piatto</h3>
-    <form method="post" action="../addPiatto">
+    <form id="piattoForm" method="post" action="/ricette">
         <label for="nome_piatto">Nome Piatto:</label>
         <input id="nome_piatto" type="text" name="nome_piatto" class="form-control" />
         <br/>
@@ -76,11 +73,55 @@
         <label for="prezzo_piatto">Prezzo Piatto:</label>
         <input id="prezzo_piatto" type="text" name="prezzo_piatto" class="form-control" />
         <br/>
-        <input id="btn_verifica" type="button" class="btn btn-warning" value="Verifica Dati" />
-        <input id="btn_aggiungi" type="button" class="btn btn-success" value="Aggiungi Piatto alla lista" />
+
+
         <input type="submit" class="btn btn-primary" value="Salva" />
         <input type="reset" class="btn btn-danger" />
+
     </form>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $("#piattoForm").submit(function(event){
+            event.preventDefault(); // Evita l'invio automatico del modulo
+
+            if($(this)[0].checkValidity()){
+                // Invia il modulo tramite AJAX
+                $.ajax({
+                    type: "POST",
+                    url: "/ricette",
+                    data: $(this).serialize(), // Serializza i dati del modulo
+                    success: function(){
+                        location.reload(); // Ricarica la pagina dopo l'invio riuscito
+                    },
+                    error: function(){
+                        alert("Si è verificato un errore durante l'invio del modulo.");
+                    }
+                });
+            } else {
+                // Se il modulo non è valido, mostra un messaggio di errore
+                alert("Per favore, riempi tutti i campi correttamente.");
+            }
+        });
+    });
+</script>
+
+
+<script>
+    $(document).ready(function(){
+        // Aggiungi gestore di eventi al pulsante "Reset"
+        $("#piattoForm").find('input[type="reset"]').click(function(){
+            // Resetta il modulo
+            $("#piattoForm")[0].reset();
+        });
+    });
+</script>
+
+
+
+<div class="btn-group">
+    <input id="btn_cancella" class="btn btn-danger" type="button" value="Cancella" onclick="cancellaSelezionati()" />
 </div>
 
 <table class="table table-striped">
@@ -125,6 +166,36 @@
     <!-- /foreach Piatto -->
     </tbody>
 </table>
+
+
+<script>
+    function cancellaSelezionati() {
+        var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+        checkboxes.forEach(function(checkbox) {
+            var row = checkbox.closest('tr');
+            var nomeRicetta = row.querySelector('td:nth-child(2)').innerText;
+
+            // Invia una richiesta HTTP DELETE al backend per eliminare la ricetta
+            fetch('/ricette/' + encodeURIComponent(nomeRicetta), {
+                method: 'DELETE'
+            })
+                .then(response => {
+                    if (response.ok) {
+                        // Rimuovi la riga dalla tabella se la richiesta ha avuto successo
+                        row.remove();
+                    } else {
+                        // Gestisci eventuali errori
+                        console.error('Errore durante l\'eliminazione della ricetta');
+                    }
+                })
+                .catch(error => {
+                    console.error('Si è verificato un errore:', error);
+                });
+        });
+    }
+
+
+</script>
 
 
 

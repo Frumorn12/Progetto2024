@@ -26,6 +26,10 @@ import {CreapiattoComponent} from "./creapiatto/creapiatto.component";
 import {GestioneComponent} from "./gestione/gestione.component";
 import {ComponenteVisioneSearchComponent} from "./componente-visione-search/componente-visione-search.component";
 import {GestioneRecensioniComponent} from "./gestione-recensioni/gestione-recensioni.component";
+import {TabellaOrdiniComponent} from "./tabella-ordini/tabella-ordini.component";
+import {AuthGuardAdminServiceService} from "./auth-guard-admin-service.service";
+import {PrenotazioniAdminComponent} from "./prenotazioni-admin/prenotazioni-admin.component";
+import {PrenotazioneUtenteComponent} from "./prenotazione-utente/prenotazione-utente.component";
 const routes: Routes = [
   {"path" : "", component:HomeComponent},
   {"path" : "chi_siamo", component:ChiSiamoComponent},
@@ -40,18 +44,20 @@ const routes: Routes = [
   {"path" : "senzalattosio", component:SenzalattosioComponent},
   {"path" : "senzaglutine", component:SenzaglutineComponent},
   {"path" : "bevande", component:BevandeComponent},
-  {"path" : "preferiti", component:PreferitiComponent},
-  {"path" : "prenotazione", component:PrenotaComponent},
-  {"path" : "prenotazioneasporto", component:PrenotazioneasportoComponent},
-  {"path" : "prenotazionetavolo", component:PrenotazionetavoloComponent},
+  {"path" : "preferiti", component:PreferitiComponent, canActivate:[AuthGuardService]},
+  {"path" : "prenotazione", component:PrenotaComponent, canActivate:[AuthGuardService]},
+  {"path" : "prenotazioneasporto", component:PrenotazioneasportoComponent ,canActivate:[AuthGuardService]},
+  {"path" : "prenotazionetavolo", component:PrenotazionetavoloComponent, canActivate:[AuthGuardService]},
   {"path" : "segnalazione", component:SegnalaciComponent},
   {"path" : "registrazione", component:RegistrazioneComponent},
   {"path" : "sezione-menu-vetrina", component:SezioneMenuVetrinaComponent},
-  {"path" : "crea-piatto", component:CreapiattoComponent},
-  {"path" : "gestione", component:GestioneComponent},
+  {"path" : "crea-piatto", component:CreapiattoComponent, canActivate:[AuthGuardService]},
+  {"path" : "gestione", component:GestioneComponent,canActivate:[AuthGuardAdminServiceService]},
   {"path" : "search/:piatti", component:ComponenteVisioneSearchComponent},
-  {"path" : "gestioneRecensioni", component:GestioneRecensioniComponent},
-
+  {"path" : "gestioneRecensioni", component:GestioneRecensioniComponent, canActivate:[AuthGuardAdminServiceService]},
+  {"path" : "ordini", component:TabellaOrdiniComponent, canActivate:[AuthGuardService]},
+  {"path" : "prenotazioni_admin", component:PrenotazioniAdminComponent, canActivate:[AuthGuardAdminServiceService]},
+  {"path" : "prenotazioni_utenti", component:PrenotazioneUtenteComponent, canActivate:[AuthGuardService]},
 
 
   {"path" : "html/:name", component:HtmlCreateComponent},

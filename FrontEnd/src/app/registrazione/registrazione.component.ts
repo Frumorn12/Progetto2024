@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {UtenteServiceService} from "../services/utente-service.service";
 declare const calculateStrength: (password: string) => number; // Importa la funzione dalla logica JavaScript
 
+declare const checkEmailValidity: (email: string) => boolean; // Importa la funzione dalla logica JavaScript
 
 declare const google: any;
 
@@ -42,6 +43,7 @@ export class RegistrazioneComponent{
 
 
 
+  emailValid = false;
   passwordLengthValid = false;
 
   constructor(private router: Router, private user: UtenteServiceService) {}
@@ -101,12 +103,9 @@ export class RegistrazioneComponent{
   }
 
 
+  emailChange() {
+    this.emailValid = checkEmailValidity(this.email.value);
+    this.change();
 
-
-
-
-
-
-
-
+  }
 }

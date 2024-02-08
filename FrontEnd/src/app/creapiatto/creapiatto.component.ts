@@ -5,6 +5,8 @@ import {Piatto} from "../model/piatto";
 import {HamburgerServiceService} from "../services/hamburger-service.service";
 import {Hamburger} from "../model/hamburger";
 import {Immagini} from "../model/immagini";
+import {CarrelloServiceService} from "../services/carrello-service.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-creapiatto',
@@ -24,8 +26,12 @@ export class CreapiattoComponent implements OnInit{
   hamburger?:Hamburger[]
   immagini?: Immagini[];
 
+  tipoConsegna: string = "";
+  consegna: boolean = false;
+  dataOra: string = "";
 
-  constructor(private piattiService:PiattiServiceService, private hamburgerService:HamburgerServiceService){}
+
+  constructor(private piattiService:PiattiServiceService, private hamburgerService:HamburgerServiceService, private carrelloService:CarrelloServiceService, private router:Router){}
 
 
   ngOnInit(){
@@ -67,6 +73,8 @@ export class CreapiattoComponent implements OnInit{
 
   }
 // Metodo per calcolare il totale del carrello
+
+
   calculateTotal(){
     // @ts-ignore
     return this.hamburger.reduce((total, item) => total + item.prezzo * item.quantita, 0);
@@ -78,6 +86,18 @@ export class CreapiattoComponent implements OnInit{
     this.hamburgerService.dammiImmagini().subscribe(
       immagini => this.immagini = immagini
     );
+
+  }
+
+  go(){
+
+    if (this.tipoConsegna == "consegna"){
+      this.consegna = false;
+    } else {
+      this.consegna = true;
+    }
+    this.carrelloService.prenota_hamburger(this.dataOra, this.consegna)
+    this.router.navigate(['/']);
 
   }
 }

@@ -31,11 +31,42 @@ export class CarrelloServiceService {
     return this.http.get<Carrello[]>(this.backendUrl +"/getCarrello/"+ this.auth.token,  header )
   }
 
-  deletePiatto(piatto: Piatto | undefined) {    var header = {
+  deletePiatto(piatto: Piatto | undefined) {
+    var header = {
       headers: new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token)
 
     }
     return  this.http.get<boolean>(this.backendUrl +"/deleteCarrello/"+piatto?.nome + "/" + this.auth.token,  header )
+
+  }
+
+  prenota(data : string  , consegna : boolean) {
+    const header = {
+      headers: new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token)
+    }
+    this.http.get(this.backendUrl + "/prenota/"+data+"/"+consegna, header).subscribe(
+      data => {
+        console.log("POST Request is successful ", data);
+      },
+      error => {
+        console.log("Error", error);
+      }
+    )
+
+  }
+
+  prenota_hamburger(data: string, consegna: boolean) {
+    const header = {
+      headers: new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token)
+    }
+    this.http.get(this.backendUrl + "/prenota_hamburger/"+data+"/"+consegna, header).subscribe(
+      data => {
+        console.log("POST Request is successful ", data);
+      },
+      error => {
+        console.log("Error", error);
+      }
+    )
 
   }
 }

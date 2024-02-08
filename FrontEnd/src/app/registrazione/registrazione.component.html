@@ -102,21 +102,28 @@
 
 
   <label for="email">Email:</label>
-  <input type="email" id="email"   name="email" (input)="change()" required [formControl]="email">
+  <input type="email" id="email"   name="email" (input)="emailChange()" required [formControl]="email">
+  <app-errore-messaggio *ngIf="!emailValid" [messaggio]="'Inserire email valida'"></app-errore-messaggio>
+
 
   <label for="password">Password:</label>
   <input type="password" id="password" [(ngModel)]="password" (input)="onPasswordChange()" name="password" required [formControl]="password1">
+
 
   <div class="strength-meter">
     <div [style.width.%]="strength" [ngStyle]="getStrengthColor()">
       Forza: {{ strength }}%
     </div>
 
+
+
   </div>
+
 
   <button type="submit" [disabled]="!formIsValid || !passwordLengthValid" [ngStyle]="{'background-color': (formIsValid && passwordLengthValid) ? '#4caf50' : '#ddd'}" >Registrati</button>
   <app-errore-messaggio *ngIf="!formIsValid" [messaggio]="'Inserire tutti i campi'"></app-errore-messaggio>
   <app-errore-messaggio *ngIf="!passwordLengthValid" [messaggio]="'Password non valida'"></app-errore-messaggio>
+
 </form>
 
 

@@ -1,0 +1,61 @@
+
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white; /* Imposta il colore di sfondo a bianco */
+  }
+
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+
+  th, td {
+    padding: 12px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  form {
+    margin-top: 20px;
+  }
+
+  .action-buttons button {
+    margin-right: 5px;
+  }
+</style>
+
+<div class="app-routing-module-container">
+<table>
+  <thead>
+  <tr>
+    <th>ID Ordine</th>
+    <th>Cliente</th>
+    <th>Piatto</th>
+    <th>Prezzo</th>
+    <th>Quantità</th>
+  </tr>
+  </thead>
+  <tbody>
+  <ng-container *ngFor="let ordine of ordini; let i = index">
+    <ng-container *ngIf="i === 0 || ordine.id !== ordini[i - 1]?.id">
+      <!-- Divisorio se è il primo elemento o l'ID ordine è diverso da quello precedente -->
+      <tr>
+        <td colspan="5" class="divisorio">ID Ordine: {{ ordine.id }}</td>
+      </tr>
+    </ng-container>
+    <tr>
+      <td>{{ ordine.id }}</td>
+      <td>{{ ordine.utente }}</td>
+      <td>{{ ordine.nome }}</td>
+      <td>{{ ordine.prezzo }}</td>
+      <td>{{ ordine.quantita }}</td>
+    </tr>
+  </ng-container>
+  </tbody>
+</table>
+</div>

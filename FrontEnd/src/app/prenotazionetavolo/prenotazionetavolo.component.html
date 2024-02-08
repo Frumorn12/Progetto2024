@@ -71,8 +71,12 @@
   <h3>Dettagli della Prenotazione</h3>
 
   <!-- Campi di input per data e ora della prenotazione e commenti aggiuntivi -->
-  <label for="data_ora">Data e Ora della Prenotazione:</label>
-  <input type="datetime-local" id="data_ora" name="data_ora" required [formControl]="data">
+  <label for="data">Data e Ora della Prenotazione:</label>
+  <input type="date" id="data" name="data" required [formControl]="data" [min]="minDate" (input)="checkDate()">
+
+  <app-errore-messaggio *ngIf="!dateValid" [messaggio]="'Inserire una data disponibile'"></app-errore-messaggio>
+
+
 
   <label for="articoli">Commenti aggiuntivi:</label>
   <textarea id="articoli" name="articoli" rows="4" required [formControl]="commenti"></textarea>
@@ -81,7 +85,7 @@
   <h3>Conferma e Invio</h3>
 
   <!-- Pulsante di invio del modulo -->
-  <button type="submit">Invia Prenotazione</button>
+  <button type="submit" [disabled]="!dateValid" [ngStyle]="{'background-color': (dateValid) ? '#4caf50' : '#ddd'}" >Invia Prenotazione</button>
 </form>
 
 <!-- Chiudi il modulo di prenotazione -->

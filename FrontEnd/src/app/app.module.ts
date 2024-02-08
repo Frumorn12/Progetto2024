@@ -81,6 +81,12 @@ import { GestioneRecensioniComponent } from './gestione-recensioni/gestione-rece
 import {PrenotazioneServiceService} from "./services/prenotazione-service.service";
 
 import Typed from 'typed.js';
+import { TabellaOrdiniComponent } from './tabella-ordini/tabella-ordini.component';
+import { KendoDatepickerComponent } from './kendo-datepicker/kendo-datepicker.component';
+import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
+import { PrenotazioniAdminComponent } from './prenotazioni-admin/prenotazioni-admin.component';
+import { PrenotazioneUtenteComponent } from './prenotazione-utente/prenotazione-utente.component';
+
 
 
 
@@ -126,6 +132,10 @@ import Typed from 'typed.js';
     ComponenteVisioneSearchComponent,
     CarrelloComponent,
     GestioneRecensioniComponent,
+    TabellaOrdiniComponent,
+    KendoDatepickerComponent,
+    PrenotazioniAdminComponent,
+    PrenotazioneUtenteComponent,
 
     //I keep the new line
   ],
@@ -172,6 +182,7 @@ import Typed from 'typed.js';
     MatRadioModule,
     MatDatepickerModule,
     MatTooltipModule,
+    DateInputsModule,
 
   ],
   providers: [PiattiServiceService, UtenteServiceService, PrenotazioneServiceService],

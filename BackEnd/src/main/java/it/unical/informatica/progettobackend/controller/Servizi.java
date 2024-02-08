@@ -2,8 +2,10 @@ package it.unical.informatica.progettobackend.controller;
 
 
 import it.unical.informatica.progettobackend.persistenza.DBManager;
+import it.unical.informatica.progettobackend.persistenza.dao.postgres.PiattoProxy;
 import it.unical.informatica.progettobackend.persistenza.model.*;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -173,9 +175,9 @@ public class Servizi {
     }
 
     @PostMapping("/registrazione/{username}/{password}/{tipo}/{nome}/{cognome}/{data}/{via}/{civico}/{email}")
-    public void registrazione(@PathVariable String username, @PathVariable String password){
+    public void registrazione(@PathVariable String username, @PathVariable String password , @PathVariable int tipo, @PathVariable String nome, @PathVariable String cognome, @PathVariable String data, @PathVariable String via, @PathVariable int civico, @PathVariable String email){
 
-        DBManager.getInstance().getUtenteDao().addUtente(username, password, 1, "nome", "cognome", "data", "via", 1, "email");
+        DBManager.getInstance().getUtenteDao().addUtente(username, password, tipo, nome, cognome, data, via, civico, email);
 
 
 
@@ -345,12 +347,106 @@ public class Servizi {
         return DBManager.getInstance().getRecensioneDao().getRecensioni();
     }
 
+    @GetMapping("/prenota/{data}/{consegna}")
+    public void prenota(HttpServletRequest req, @PathVariable String data, @PathVariable boolean consegna){
+        String auth = req.getHeader("Authorization");
+        String token = auth.substring("Basic ".length());
+
+        DBManager.getInstance().getCarrelloDao().prenota(Auth.getInstance().getUserByToken(token).getUsername(), data, consegna);
+
+    }
+
+    @GetMapping("/prenota_hamburger/{data}/{consegna}")
+    public void prenota_hamburger(HttpServletRequest req, @PathVariable String data, @PathVariable boolean consegna){
+        String auth = req.getHeader("Authorization");
+        String token = auth.substring("Basic ".length());
+
+        DBManager.getInstance().getCarrelloDao().prenota_hamburger(Auth.getInstance().getUserByToken(token).getUsername(), data, consegna);
+
+    }
+
+    @GetMapping("/ordini")
+    public List<Ordine> getOrdini(HttpServletRequest req){
+        String auth = req.getHeader("Authorization");
+        String token = auth.substring("Basic ".length());
+        int tipo = Auth.getInstance().getUserByToken(token).getTipo();
+        return DBManager.getInstance().getOrdiniDao().findAll(Auth.getInstance().getUserByToken(token).getUsername(), tipo);
+    }
+
+    @PostMapping("/segnalaci/{richiesta}/{nome}/{cognome}/{email}/{commenti}")
+    public void segnalaci(HttpServletRequest req, @PathVariable String richiesta, @PathVariable String nome, @PathVariable String cognome, @PathVariable String email, @PathVariable String commenti){
+        System.out.println("SONO DENTRO SEGNALACI");
+        DBManager.getInstance().getUtenteDao().segnalaci(richiesta,nome,cognome,email,commenti);
+    }
+
+    @DeleteMapping("/ricette/{nomeRicetta}")
+    public ResponseEntity<?> eliminaRicetta(@PathVariable String nomeRicetta) {
+        DBManager.getInstance().getPiattiDao().deletePiatto(nomeRicetta);
+        return ResponseEntity.ok().build();
+    }
 
 
+    @PostMapping("/ricette")
+    public void aggiungiRicetta(
+            @RequestParam("nome_piatto") String nomePiatto,
+            @RequestParam("ingredienti_piatto") String ingredientiPiatto,
+            @RequestParam("descrizione_piatto") String descrizionePiatto,
+            @RequestParam("preparazione_piatto") String preparazionePiatto,
+            @RequestParam("tipo_piatto") String tipoPiatto,
+            @RequestParam("immagine_piatto") String immaginePiatto,
+            @RequestParam("prezzo_piatto") double prezzoPiatto
+    ){
+        DBManager.getInstance().getPiattiDao().aggiungiPiatto(nomePiatto, ingredientiPiatto, descrizionePiatto, preparazionePiatto, Integer.parseInt(tipoPiatto), immaginePiatto, prezzoPiatto);
+    }
+
+    @GetMapping("/prenotazioni/date")
+    public List<String> getPrenotazioni(HttpServletRequest req){
+        return DBManager.getInstance().getPrenotazioniDao().getDate();
+    }
+
+    @PostMapping("/prenotazioni/tavola/{nome}/{cognome}/{numero}/{email}/{data}/{commenti}")
+    public void aggiungiPrenotazione(@PathVariable String nome, @PathVariable String cognome, @PathVariable String numero, @PathVariable String email, @PathVariable String data, @PathVariable String commenti, HttpServletRequest req){
+        String auth = req.getHeader("Authorization");
+        String token = auth.substring("Basic ".length());
+        DBManager.getInstance().getPrenotazioniDao().aggiungiPrenotazione(nome, cognome, numero, email, data, commenti, Auth.getInstance().getUserByToken(token).getUsername());
+    }
+
+    @GetMapping("/prenotazioni/tutte")
+    public List<Prenotazione> getPrenotazioniTutte(HttpServletRequest req){
+        return DBManager.getInstance().getPrenotazioniDao().getPrenotazioni();
+    }
+
+    @PostMapping("/prenotazioni/accetta/{id}")
+    public void accettaPrenotazione(@PathVariable int id){
+        DBManager.getInstance().getPrenotazioniDao().accettaPrenotazione(id);
+    }
+
+    @PostMapping("/prenotazioni/rifiuta/{id}")
+    public void rifiutaPrenotazione(@PathVariable int id){
+        DBManager.getInstance().getPrenotazioniDao().rifiutaPrenotazione(id);
+    }
+
+    @GetMapping("/prenotazioni/utente")
+    public List<Prenotazione> getPrenotazioniUtente(HttpServletRequest req){
+        String auth = req.getHeader("Authorization");
+        String token = auth.substring("Basic ".length());
+        return DBManager.getInstance().getPrenotazioniDao().getPrenotazioniUtente(Auth.getInstance().getUserByToken(token).getUsername());
+    }
 
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

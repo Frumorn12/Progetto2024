@@ -13,7 +13,9 @@ export class ChiSiamoComponent implements OnInit {
     // Opzioni di configurazione di Typed.js
     // @ts-ignore
     const options: Typed.TypedOptions = {
-      strings: ['Benvenuti nel nostro ristorante'],
+      strings: ['Benvenuti nel nostro ristorante', 'Benvenuti al Krusty Krab ♥'],
+      animation: 'none',
+
 
       typeSpeed: 50,
       backSpeed: 25,

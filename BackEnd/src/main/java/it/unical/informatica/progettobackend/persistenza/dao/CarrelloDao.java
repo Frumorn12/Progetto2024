@@ -14,4 +14,7 @@ public interface CarrelloDao {
 
     List<Carrello> getCarrello(String username);
 
+    void prenota(String username,String data, boolean consegna);
+
+    void prenota_hamburger(String username, String data, boolean consegna);
 }

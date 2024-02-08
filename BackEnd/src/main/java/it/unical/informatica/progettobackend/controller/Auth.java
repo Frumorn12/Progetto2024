@@ -88,6 +88,9 @@ public class Auth {
         }
     }
 
+
+
+
     @GetMapping ("/isAuthenticatedAsAdmin")
     public boolean isAuthenticatedAsAdmin(HttpServletRequest req){
         System.out.println("Chiama admin");

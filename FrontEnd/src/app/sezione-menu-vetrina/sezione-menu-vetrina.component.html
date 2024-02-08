@@ -40,21 +40,8 @@
 
 <section class="app-routing-module-container">
 
-  <form (ngSubmit)="go()" method="post">
+
     <!-- Intestazione del modulo -->
-    <h2>Prenotazione Asporto</h2>
-
-    <!-- Campi di input per nome, cognome, telefono, e-mail -->
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="nome" required [formControl]="nome">
-
-
-    <label for="telefono">Numero di Telefono:</label>
-    <input type="tel" id="telefono" name="telefono" required [formControl]="telefono">
-
-    <!-- Campi di input per data e ora della prenotazione e commenti aggiuntivi -->
-    <label for="data_ora">Data e Ora della Prenotazione:</label>
-    <input type="datetime-local" id="data_ora" name="data_ora" required [formControl]="data">
 
        <!-- Sezione per la conferma e l'invio -->
 
@@ -118,12 +105,23 @@
       </tfoot>
     </table>
 
-    <button type="submit">Invia Prenotazione</button>
+    <div>
+      <label>Tipo di consegna:</label>
+      <input type="radio" name="tipoConsegna" value="consegnaCasa" [(ngModel)]="tipoConsegna" required checked> Consegna in casa
+      <input type="radio" name="tipoConsegna" value="ritiroRistorante" [(ngModel)]="tipoConsegna" required> Ritiro al ristorante
+    </div>
+
+    <div>
+      <label>Data e Ora:</label>
+      <input type="datetime-local" name="dataOra" [(ngModel)]="dataOra" required>
+    </div>
+
+    <button type="submit" (click)="go()">Invia Prenotazione</button>
 
 
 
   </section>
-  </form>
+
 </section>
 
 

@@ -1,11 +1,14 @@
 package it.unical.informatica.progettobackend.persistenza;
 
 
+import it.unical.informatica.progettobackend.persistenza.dao.OrdiniDao;
 import it.unical.informatica.progettobackend.persistenza.dao.PiattoDao;
 import it.unical.informatica.progettobackend.persistenza.dao.PreferitiDao;
+import it.unical.informatica.progettobackend.persistenza.dao.PrenotazioniDao;
 import it.unical.informatica.progettobackend.persistenza.dao.postgres.*;
 
 import java.sql.*;
+import java.util.Scanner;
 
 public class DBManager {
     private static DBManager instance = null;
@@ -78,5 +81,11 @@ public class DBManager {
 
     public HamburgerDaoPostgres getHamburgerDao() {
         return new HamburgerDaoPostgres(getConnection());
+    }
+
+    public OrdiniDao getOrdiniDao() { return new OrdiniDaoPostgres(getConnection()); }
+
+    public PrenotazioniDao getPrenotazioniDao() {
+        return new PrenotazioniDaoPostgres(getConnection());
     }
 }

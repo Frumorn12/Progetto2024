@@ -1,10 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 
-
+@font-face {
+  font-family: 'MyFont', sans-serif;
+  src: url('~src/assets/fonts/Krabby_Patty.ttf') format('ttf');
+  /* Aggiungi altri formati del font se necessario */
+}
 
 header {
   height: 20px  ;
 
+}
+
+.protest-riot-regular {
+  font-family: "Protest Riot", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 

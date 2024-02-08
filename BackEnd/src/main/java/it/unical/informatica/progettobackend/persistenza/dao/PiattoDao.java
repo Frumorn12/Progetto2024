@@ -42,4 +42,8 @@ public interface PiattoDao {
     List<Piatto> getSearch(String stringa);
 
     List<RecensioneCompleta> getRecensioni(PiattoProxy piattoProxy);
+
+    void deletePiatto(String nomeRicetta);
+
+    void aggiungiPiatto(String nomePiatto, String ingredientiPiatto, String descrizionePiatto, String preparazionePiatto, int tipoPiatto, String immaginePiatto, double prezzoPiatto);
 }

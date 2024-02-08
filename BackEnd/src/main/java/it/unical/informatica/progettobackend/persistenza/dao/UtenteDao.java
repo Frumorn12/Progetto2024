@@ -21,4 +21,6 @@ public interface UtenteDao {
     int getTipo(String username);
 
     boolean changeTipo(String username, int tipo);
+
+    void segnalaci(String richiesta, String nome, String cognome, String email, String commenti);
 }

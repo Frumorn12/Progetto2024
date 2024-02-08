@@ -9,10 +9,16 @@ import {AuthServiceService} from "../services/auth-service.service";
 export class SidebarComponent implements OnInit {
 
   admin:boolean = false;
+  token: string = '';
 
   constructor(private auth:AuthServiceService ) { }
 
   ngOnInit(): void {
+    // @ts-ignore
+    this.token= this.auth.getToken();
+
+    console.log("TOKEN SIDEBAR: " + this.token);
+
 
 
 

@@ -70,6 +70,8 @@ export class AuthServiceService {
   logout(){
 
 
+
+
     this.http.post<AuthToken>(this.backendUrl + "/logout",
     {"Authorization":"Basic " + this.token}, {withCredentials: true}).subscribe(
       res => {
