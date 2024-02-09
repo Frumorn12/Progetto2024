@@ -4,12 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5434a928-41c9-4de5-a205-d74523470c7e" name="Changes" comment="FINITO PRENOTAZIONI">
+    <list default="true" id="5434a928-41c9-4de5-a205-d74523470c7e" name="Changes" comment="BAN UTENTE">
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/ServletInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/ServletInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/controller/servlet/PiattiServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/controller/servlet/PiattiServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/postgres/CarrelloDaoPostregres.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/postgres/CarrelloDaoPostregres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/postgres/UtenteDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/postgres/UtenteDaoPostgres.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/registrazione/registrazione.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/registrazione/registrazione.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/auth-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/auth-service.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/html-create/html-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/html-create/html-create.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/kendo-datepicker/kendo-datepicker.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/kendo-datepicker/kendo-datepicker.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/kendo-datepicker/kendo-datepicker.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/kendo-datepicker/kendo-datepicker.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/ristorante-vetrina/ristorante-vetrina.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/ristorante-vetrina/ristorante-vetrina.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/ristorante-vetrina/ristorante-vetrina.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/ristorante-vetrina/ristorante-vetrina.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/sezione-piatti-vetrina/sezione-piatti-vetrina.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/sezione-piatti-vetrina/sezione-piatti-vetrina.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/sezione-ristorante-vetrina/sezione-ristorante-vetrina.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/sezione-ristorante-vetrina/sezione-ristorante-vetrina.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/sezione-ristorante-vetrina/sezione-ristorante-vetrina.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/sezione-ristorante-vetrina/sezione-ristorante-vetrina.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +130,8 @@
       <workItem from="1707313390727" duration="7837000" />
       <workItem from="1707341579938" duration="2738000" />
       <workItem from="1707403038645" duration="5897000" />
-      <workItem from="1707467840165" duration="1348000" />
+      <workItem from="1707467840165" duration="1370000" />
+      <workItem from="1707469907523" duration="1804000" />
     </task>
     <task id="LOCAL-00001" summary="Commento codice per la ricerca dalla barra">
       <option name="closed" value="true" />
@@ -172,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707404606991</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="BAN UTENTE">
+      <option name="closed" value="true" />
+      <created>1707469763790</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1707469763790</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,6 +225,7 @@
     <MESSAGE value="Aggiustamenti, fix, accesso backend solo token. Collegato segnalaci ,aggiustato query crea piatto" />
     <MESSAGE value="FIX DATA + prenotazione tavolo visione admin" />
     <MESSAGE value="FINITO PRENOTAZIONI" />
-    <option name="LAST_COMMIT_MESSAGE" value="FINITO PRENOTAZIONI" />
+    <MESSAGE value="BAN UTENTE" />
+    <option name="LAST_COMMIT_MESSAGE" value="BAN UTENTE" />
   </component>
 </project>

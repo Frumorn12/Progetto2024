@@ -7,8 +7,6 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ChiSiamoComponent } from './chi-siamo/chi-siamo.component';
-import { RistoranteVetrinaComponent } from './ristorante-vetrina/ristorante-vetrina.component';
-import { SezioneRistoranteVetrinaComponent } from './sezione-ristorante-vetrina/sezione-ristorante-vetrina.component';
 import { CommonModule, NgFor } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
@@ -82,7 +80,6 @@ import {PrenotazioneServiceService} from "./services/prenotazione-service.servic
 
 import Typed from 'typed.js';
 import { TabellaOrdiniComponent } from './tabella-ordini/tabella-ordini.component';
-import { KendoDatepickerComponent } from './kendo-datepicker/kendo-datepicker.component';
 import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import { PrenotazioniAdminComponent } from './prenotazioni-admin/prenotazioni-admin.component';
 import { PrenotazioneUtenteComponent } from './prenotazione-utente/prenotazione-utente.component';
@@ -100,8 +97,7 @@ import { PrenotazioneUtenteComponent } from './prenotazione-utente/prenotazione-
     HeaderComponent,
     HomeComponent,
     ChiSiamoComponent,
-    RistoranteVetrinaComponent,
-    SezioneRistoranteVetrinaComponent,
+
     LoginComponent,
     SidebarComponent,
     PiattiComponent,
@@ -133,7 +129,6 @@ import { PrenotazioneUtenteComponent } from './prenotazione-utente/prenotazione-
     CarrelloComponent,
     GestioneRecensioniComponent,
     TabellaOrdiniComponent,
-    KendoDatepickerComponent,
     PrenotazioniAdminComponent,
     PrenotazioneUtenteComponent,
 

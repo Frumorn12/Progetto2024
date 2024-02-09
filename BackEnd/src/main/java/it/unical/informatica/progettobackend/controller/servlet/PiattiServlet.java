@@ -33,6 +33,7 @@ public class PiattiServlet extends HttpServlet {
 
 
 
+
         else if (Auth.getInstance().getUserByToken(token).getTipo() == 2){
 
                 System.out.println("ENTRO DENTRO PIATTI SERVLET");
