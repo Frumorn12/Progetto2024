@@ -201,7 +201,6 @@ public class UtenteDaoPostgres implements UtenteDao {
                     "where u.username = ? " +
                     "   r.utente = u.username";
             PreparedStatement pr = connection.prepareStatement(query);
-            pr.setString(1, "topolino");
             ResultSet rs = pr.executeQuery();
             while(rs.next()){
                 System.out.println(rs.getString("recensione") + " " + rs.getString("utente"));
