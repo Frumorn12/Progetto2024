@@ -53,7 +53,18 @@ export class AuthServiceService {
   }
 
   isAuthenticated(){
-    return this.getToken() != undefined;
+    if (this.getToken() == undefined){
+      return false;
+    }
+
+    if (this.getType() == "7"){
+      window.alert("Errore: l'utente è stato bannato. Impossibile autenticarsi.");
+      this.removeToken();
+
+
+      return false;
+    }
+    return true;
   }
 
   isAuthenticatedAsAdmin() : boolean{

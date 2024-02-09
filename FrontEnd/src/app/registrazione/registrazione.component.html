@@ -120,7 +120,7 @@
   </div>
 
 
-  <button type="submit" [disabled]="!formIsValid || !passwordLengthValid" [ngStyle]="{'background-color': (formIsValid && passwordLengthValid) ? '#4caf50' : '#ddd'}" >Registrati</button>
+  <button type="submit" [disabled]="!formIsValid || !passwordLengthValid || !emailValid" [ngStyle]="{'background-color': (formIsValid && passwordLengthValid && emailValid ) ? '#4caf50' : '#ddd'}" >Registrati</button>
   <app-errore-messaggio *ngIf="!formIsValid" [messaggio]="'Inserire tutti i campi'"></app-errore-messaggio>
   <app-errore-messaggio *ngIf="!passwordLengthValid" [messaggio]="'Password non valida'"></app-errore-messaggio>
 
