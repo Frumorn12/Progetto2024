@@ -22,9 +22,7 @@ export class CreapiattoComponent implements OnInit{
   carne?:Ingrediente[]
   contorno?:Ingrediente[]
   bevande?:Ingrediente[]
-
   hamburger?:Hamburger[]
-  immagini?: Immagini[];
 
   tipoConsegna: string = "";
   consegna: boolean = false;
@@ -68,7 +66,6 @@ export class CreapiattoComponent implements OnInit{
   public getCarrello(){
     this.hamburgerService.getHamburger().subscribe
     (hamburger => this.hamburger = hamburger);
-    this.getImmagini();
 
 
   }
@@ -82,12 +79,7 @@ export class CreapiattoComponent implements OnInit{
   }
 
 
-  private getImmagini() {
-    this.hamburgerService.dammiImmagini().subscribe(
-      immagini => this.immagini = immagini
-    );
 
-  }
 
   go(){
 

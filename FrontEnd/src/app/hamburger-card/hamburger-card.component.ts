@@ -45,7 +45,16 @@ export class HamburgerCardComponent implements OnInit {
 
   }
 
+
+
   delete(){
+    this.hambugerService.deleteIngrediente(this.ingrediente).subscribe(
+      (response) => {
+        console.log(response);
+        this.ingredienteAggiunto.emit();
+      },
+      (error) => console.log(error)
+    );
 
   }
 

@@ -90,4 +90,11 @@ export class HamburgerServiceService {
   }
 
 
+  deleteIngrediente(ingrediente: Ingrediente | undefined) {
+    var header = {
+      headers: new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token)}
+    return this.http.get<boolean>(this.backendUrl + "/deleteIngrediente/"+ingrediente?.nome,header)
+
+
+  }
 }

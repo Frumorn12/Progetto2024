@@ -78,6 +78,13 @@ export class SezionePiattiVetrinaComponent implements OnInit{
         this.nome = "Bevande";
       });
     }
+    else if (this.tipo == 9){
+      this.piattiService.dammiPreferiti().subscribe
+      (piatti => {
+        this.piatti = piatti
+        this.nome = "Preferiti";
+      });
+    }
 
 
 

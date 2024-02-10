@@ -4,25 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5434a928-41c9-4de5-a205-d74523470c7e" name="Changes" comment="FIX">
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_02_2024_10_51__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/ServletUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/ServletUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/controller/Auth.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/controller/Auth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/controller/servlet/PiattiServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/controller/servlet/PiattiServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/DBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/CarrelloDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/CarrelloDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/postgres/PiattoDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/postgres/PiattoDaoPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/resources/templates/piatti.html" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/resources/templates/piatti.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/controller/Auth.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/controller/Auth.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/persistenza/DBManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/persistenza/DBManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/persistenza/dao/postgres/PiattoDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/persistenza/dao/postgres/PiattoDaoPostgres.class" afterDir="false" />
+    <list default="true" id="5434a928-41c9-4de5-a205-d74523470c7e" name="Changes" comment="NOME INVECE NUMERO">
+      <change beforePath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/ServletUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/ServletUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/controller/servlet/PiattiServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/controller/servlet/PiattiServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/target/classes/templates/piatti.html" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/classes/templates/piatti.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/antipasti/antipasti.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/antipasti/antipasti.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/auth-guard.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth-guard.service.spec.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/contorni/contorni.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/contorni/contorni.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/sezione-piatti-vetrina/sezione-piatti-vetrina.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/sezione-piatti-vetrina/sezione-piatti-vetrina.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/creapiatto/creapiatto.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/creapiatto/creapiatto.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/hamburger-card/hamburger-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/hamburger-card/hamburger-card.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/piatti-vetrina/piatti-vetrina.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/piatti-vetrina/piatti-vetrina.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/services/hamburger-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/hamburger-service.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/sezione-piatti-vetrina/sezione-piatti-vetrina.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/sezione-piatti-vetrina/sezione-piatti-vetrina.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/sidebar/sidebar.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +134,7 @@
       <workItem from="1707403038645" duration="5897000" />
       <workItem from="1707467840165" duration="1370000" />
       <workItem from="1707469907523" duration="3525000" />
-      <workItem from="1707571047912" duration="3359000" />
+      <workItem from="1707571047912" duration="5800000" />
     </task>
     <task id="LOCAL-00001" summary="Commento codice per la ricerca dalla barra">
       <option name="closed" value="true" />
@@ -222,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707472319653</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="NOME INVECE NUMERO">
+      <option name="closed" value="true" />
+      <created>1707574905480</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1707574905480</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,6 +254,7 @@
     <MESSAGE value="FINITO PRENOTAZIONI" />
     <MESSAGE value="BAN UTENTE" />
     <MESSAGE value="FIX" />
-    <option name="LAST_COMMIT_MESSAGE" value="FIX" />
+    <MESSAGE value="NOME INVECE NUMERO" />
+    <option name="LAST_COMMIT_MESSAGE" value="NOME INVECE NUMERO" />
   </component>
 </project>
