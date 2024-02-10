@@ -4,28 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5434a928-41c9-4de5-a205-d74523470c7e" name="Changes" comment="BAN UTENTE">
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/ServletInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/ServletInitializer.java" afterDir="false" />
+    <list default="true" id="5434a928-41c9-4de5-a205-d74523470c7e" name="Changes" comment="FIX">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_09_02_2024_10_51__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/ServletUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/ServletUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/controller/Auth.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/controller/Auth.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/controller/servlet/PiattiServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/controller/servlet/PiattiServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/postgres/CarrelloDaoPostregres.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/postgres/CarrelloDaoPostregres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/postgres/UtenteDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/postgres/UtenteDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/DBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/CarrelloDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/CarrelloDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/postgres/PiattoDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/postgres/PiattoDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/resources/templates/piatti.html" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/resources/templates/piatti.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/controller/Auth.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/controller/Auth.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/persistenza/DBManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/persistenza/DBManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/persistenza/dao/postgres/PiattoDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/persistenza/dao/postgres/PiattoDaoPostgres.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/html-create/html-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/html-create/html-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/kendo-datepicker/kendo-datepicker.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/kendo-datepicker/kendo-datepicker.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/kendo-datepicker/kendo-datepicker.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/kendo-datepicker/kendo-datepicker.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ristorante-vetrina/ristorante-vetrina.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ristorante-vetrina/ristorante-vetrina.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ristorante-vetrina/ristorante-vetrina.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/ristorante-vetrina/ristorante-vetrina.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/antipasti/antipasti.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/antipasti/antipasti.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/auth-guard.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auth-guard.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/contorni/contorni.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/contorni/contorni.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/sezione-piatti-vetrina/sezione-piatti-vetrina.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/sezione-piatti-vetrina/sezione-piatti-vetrina.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/sezione-ristorante-vetrina/sezione-ristorante-vetrina.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/sezione-ristorante-vetrina/sezione-ristorante-vetrina.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/sezione-ristorante-vetrina/sezione-ristorante-vetrina.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/sezione-ristorante-vetrina/sezione-ristorante-vetrina.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/sezione-piatti-vetrina/sezione-piatti-vetrina.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/sezione-piatti-vetrina/sezione-piatti-vetrina.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/sidebar/sidebar.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +37,17 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="dev2" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -131,7 +139,8 @@
       <workItem from="1707341579938" duration="2738000" />
       <workItem from="1707403038645" duration="5897000" />
       <workItem from="1707467840165" duration="1370000" />
-      <workItem from="1707469907523" duration="1804000" />
+      <workItem from="1707469907523" duration="3525000" />
+      <workItem from="1707571047912" duration="3359000" />
     </task>
     <task id="LOCAL-00001" summary="Commento codice per la ricerca dalla barra">
       <option name="closed" value="true" />
@@ -197,7 +206,23 @@
       <option name="project" value="LOCAL" />
       <updated>1707469763790</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="FIX">
+      <option name="closed" value="true" />
+      <created>1707472197594</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1707472197594</updated>
+    </task>
+    <task id="LOCAL-00010" summary="FIX">
+      <option name="closed" value="true" />
+      <created>1707472319653</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1707472319653</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,6 +251,7 @@
     <MESSAGE value="FIX DATA + prenotazione tavolo visione admin" />
     <MESSAGE value="FINITO PRENOTAZIONI" />
     <MESSAGE value="BAN UTENTE" />
-    <option name="LAST_COMMIT_MESSAGE" value="BAN UTENTE" />
+    <MESSAGE value="FIX" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX" />
   </component>
 </project>

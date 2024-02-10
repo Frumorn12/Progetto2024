@@ -6,8 +6,6 @@ import java.util.List;
 
 public interface CarrelloDao {
 
-
-
     void putInCarrello(String username, String piatto, double prezzo);
 
     void deleteFromCarrello(String piatto, String username);

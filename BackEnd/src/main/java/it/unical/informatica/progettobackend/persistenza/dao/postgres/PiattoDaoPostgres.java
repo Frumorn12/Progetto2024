@@ -49,11 +49,9 @@ public class PiattoDaoPostgres implements PiattoDao {
         try {
             Statement st = connection.createStatement();
             String query = "select * from piatti";
-            System.out.println("query finda all: " + query);
-
             ResultSet rs = st.executeQuery(query);
             while (rs.next()){
-                Piatto piatto = new Piatto();
+                Piatto piatto = new PiattoProxy(connection);
                 piatto.setNome(rs.getString("nome"));
                 piatto.setDescrizione(rs.getString("descrizione"));
                 piatto.setIngredienti(rs.getString("ingredienti"));

@@ -53,8 +53,8 @@ public class Auth {
         String token = codificaBase64(concat);
         utente = getUserByToken(token);
         if (utente != null){
-            HttpSession session = req.getSession();
-            session.setAttribute("user", utente);
+   //         HttpSession session = req.getSession();
+   //         session.setAttribute("user", utente);
             AuthToken auth = new AuthToken();
             auth.setToken(token);
             auth.setUtente(utente);
@@ -142,6 +142,7 @@ public class Auth {
 
         if (token != null) {
             String decod = decodificaBase64(token);
+            // username:password
             String username = decod.split(":")[0];
             String password = decod.split(":")[1];
             System.out.println("USERNAME: " + username);

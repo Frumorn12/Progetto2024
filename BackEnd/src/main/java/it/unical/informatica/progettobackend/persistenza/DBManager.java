@@ -58,8 +58,6 @@ public class DBManager {
     public PiattoDao getPiattiDao() {
         return new PiattoDaoPostgres(getConnection());
 
-
-
     }
 
 
