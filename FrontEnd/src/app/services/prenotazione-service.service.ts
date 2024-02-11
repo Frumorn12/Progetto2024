@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {AuthServiceService} from "./auth-service.service";
 import {Prenotazione} from "../model/prenotazione";
+import {Segnalazione} from "../model/segnalazioni";
 
 @Injectable({
   providedIn: 'root'
@@ -71,6 +72,14 @@ export class PrenotazioneServiceService {
       headers: new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token)
     }
     return this.http.get<Prenotazione[]>(this.backendUrl + "/prenotazioni/utente", header);
+
+  }
+
+  getAllSegnalazioni() {
+    var header = {
+      headers: new HttpHeaders().set('Authorization', 'Basic ' + this.auth.token)
+    }
+    return this.http.get<Segnalazione[]>(this.backendUrl + "/segnalazioni/get", header);
 
   }
 }

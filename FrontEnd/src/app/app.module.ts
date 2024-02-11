@@ -83,6 +83,7 @@ import { TabellaOrdiniComponent } from './tabella-ordini/tabella-ordini.componen
 import { DateInputsModule } from '@progress/kendo-angular-dateinputs';
 import { PrenotazioniAdminComponent } from './prenotazioni-admin/prenotazioni-admin.component';
 import { PrenotazioneUtenteComponent } from './prenotazione-utente/prenotazione-utente.component';
+import { TabellaSegnalazioniComponent } from './tabella-segnalazioni/tabella-segnalazioni.component';
 
 
 
@@ -131,6 +132,7 @@ import { PrenotazioneUtenteComponent } from './prenotazione-utente/prenotazione-
     TabellaOrdiniComponent,
     PrenotazioniAdminComponent,
     PrenotazioneUtenteComponent,
+    TabellaSegnalazioniComponent,
 
     //I keep the new line
   ],

@@ -433,6 +433,19 @@ public class Servizi {
         return DBManager.getInstance().getPrenotazioniDao().getPrenotazioniUtente(Auth.getInstance().getUserByToken(token).getUsername());
     }
 
+    @GetMapping("/deleteIngrediente/{nome}")
+    public boolean deleteIngrediente(HttpServletRequest req, @PathVariable String nome){
+        return DBManager.getInstance().getHamburgerDao().deleteIngrediente(nome, Auth.getInstance().getUserByToken(req.getHeader("Authorization").substring("Basic ".length())).getUsername());
+    }
+
+
+    @GetMapping("/segnalazioni/get")
+    public List<Segnalazione> getSegnalazioni(){
+        return DBManager.getInstance(). getPrenotazioniDao().getSegnalazioni();
+    }
+
+
+
 
 
 }

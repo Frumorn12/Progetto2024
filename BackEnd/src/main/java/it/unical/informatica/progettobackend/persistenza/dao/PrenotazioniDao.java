@@ -1,6 +1,7 @@
 package it.unical.informatica.progettobackend.persistenza.dao;
 
 import it.unical.informatica.progettobackend.persistenza.model.Prenotazione;
+import it.unical.informatica.progettobackend.persistenza.model.Segnalazione;
 
 import java.util.List;
 
@@ -16,4 +17,6 @@ public interface PrenotazioniDao {
     void rifiutaPrenotazione(int id);
 
     List<Prenotazione> getPrenotazioniUtente(String username);
+
+    List<Segnalazione> getSegnalazioni();
 }

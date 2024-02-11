@@ -2,6 +2,7 @@ package it.unical.informatica.progettobackend.persistenza.dao.postgres;
 
 import it.unical.informatica.progettobackend.persistenza.dao.PrenotazioniDao;
 import it.unical.informatica.progettobackend.persistenza.model.Prenotazione;
+import it.unical.informatica.progettobackend.persistenza.model.Segnalazione;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -119,5 +120,23 @@ public class PrenotazioniDaoPostgres implements PrenotazioniDao {
             e.printStackTrace();
         }
         return prenotazioni;
+    }
+
+    @Override
+    public List<Segnalazione> getSegnalazioni() {
+        List<Segnalazione> segnalazioni = new ArrayList<>();
+        try{
+            String query = "select * from segnalazioni";
+            PreparedStatement st = connection.prepareStatement(query);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                Segnalazione segnalazione = new Segnalazione(rs.getString("richiesta"),rs.getString("nome"),rs.getString("cognome"),rs.getString("email"),rs.getString("commenti"));
+                segnalazioni.add(segnalazione);
+            }
+            return segnalazioni;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return segnalazioni;
     }
 }

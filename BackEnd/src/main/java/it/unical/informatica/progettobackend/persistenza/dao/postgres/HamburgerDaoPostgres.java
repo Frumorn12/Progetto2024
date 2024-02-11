@@ -228,6 +228,33 @@ public class HamburgerDaoPostgres implements HamburgerDao {
         }
     }
 
+    @Override
+    public boolean deleteIngrediente(String nome, String username) {
+        try{
+            if (getQuantita(username, nome) > 1) {
+                String query = "UPDATE hamburger SET quantita = quantita - 1 WHERE utente = ? and nome = ?";
+                PreparedStatement statement = connection.prepareStatement(query);
+                statement.setString(1, username);
+                statement.setString(2, nome);
+                statement.executeUpdate();
+                return true;
+            }
+            else {
+                String query = "DELETE FROM hamburger WHERE utente = ? and nome = ?";
+                PreparedStatement statement = connection.prepareStatement(query);
+                statement.setString(1, username);
+                statement.setString(2, nome);
+                statement.executeUpdate();
+                return true;
+            }
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
     public int getQuantita (String username, String piatto) {
         try {
             String query = "select quantita from hamburger where utente = ? and nome = ?";

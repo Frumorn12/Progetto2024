@@ -4,19 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5434a928-41c9-4de5-a205-d74523470c7e" name="Changes" comment="NOME INVECE NUMERO">
-      <change beforePath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/ServletUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/ServletUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/controller/servlet/PiattiServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/controller/servlet/PiattiServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BackEnd/target/classes/templates/piatti.html" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/classes/templates/piatti.html" afterDir="false" />
+    <list default="true" id="5434a928-41c9-4de5-a205-d74523470c7e" name="Changes" comment="PREFERITI">
+      <change afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/model/Segnalazione.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/model/segnalazioni.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/tabella-segnalazioni/tabella-segnalazioni.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/tabella-segnalazioni/tabella-segnalazioni.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/tabella-segnalazioni/tabella-segnalazioni.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/tabella-segnalazioni/tabella-segnalazioni.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/controller/Servizi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/controller/Servizi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/HamburgerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/HamburgerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/PrenotazioniDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/PrenotazioniDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/postgres/HamburgerDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/postgres/HamburgerDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/postgres/PiattoProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/postgres/PiattoProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/postgres/PrenotazioniDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/src/main/java/it/unical/informatica/progettobackend/persistenza/dao/postgres/PrenotazioniDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/controller/Servizi.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/controller/Servizi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/persistenza/dao/HamburgerDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/persistenza/dao/HamburgerDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/persistenza/dao/PrenotazioniDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/persistenza/dao/PrenotazioniDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/persistenza/dao/postgres/HamburgerDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/persistenza/dao/postgres/HamburgerDaoPostgres.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/persistenza/dao/postgres/PrenotazioniDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/../BackEnd/target/classes/it/unical/informatica/progettobackend/persistenza/dao/postgres/PrenotazioniDaoPostgres.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/antipasti/antipasti.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/antipasti/antipasti.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/creapiatto/creapiatto.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/creapiatto/creapiatto.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/hamburger-card/hamburger-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/hamburger-card/hamburger-card.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/header/header.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/piatti-vetrina/piatti-vetrina.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/piatti-vetrina/piatti-vetrina.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/services/hamburger-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/hamburger-service.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/sezione-piatti-vetrina/sezione-piatti-vetrina.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/sezione-piatti-vetrina/sezione-piatti-vetrina.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/gestione-recensioni/gestione-recensioni.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/gestione-recensioni/gestione-recensioni.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/prenotazioni-admin/prenotazioni-admin.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/prenotazioni-admin/prenotazioni-admin.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/services/prenotazione-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/services/prenotazione-service.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/sidebar/sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/sidebar/sidebar.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +45,8 @@
   <component name="Git.Settings">
     <option name="PUSH_TAGS">
       <GitPushTagMode>
-        <option name="argument" value="--follow-tags" />
-        <option name="title" value="Current Branch" />
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
       </GitPushTagMode>
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -134,7 +146,9 @@
       <workItem from="1707403038645" duration="5897000" />
       <workItem from="1707467840165" duration="1370000" />
       <workItem from="1707469907523" duration="3525000" />
-      <workItem from="1707571047912" duration="5800000" />
+      <workItem from="1707571047912" duration="6862000" />
+      <workItem from="1707588029542" duration="2213000" />
+      <workItem from="1707660872948" duration="1957000" />
     </task>
     <task id="LOCAL-00001" summary="Commento codice per la ricerca dalla barra">
       <option name="closed" value="true" />
@@ -224,7 +238,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707574905480</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="PREFERITI">
+      <option name="closed" value="true" />
+      <created>1707577517006</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1707577517006</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +277,7 @@
     <MESSAGE value="BAN UTENTE" />
     <MESSAGE value="FIX" />
     <MESSAGE value="NOME INVECE NUMERO" />
-    <option name="LAST_COMMIT_MESSAGE" value="NOME INVECE NUMERO" />
+    <MESSAGE value="PREFERITI" />
+    <option name="LAST_COMMIT_MESSAGE" value="PREFERITI" />
   </component>
 </project>

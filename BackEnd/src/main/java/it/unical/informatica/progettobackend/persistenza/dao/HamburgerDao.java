@@ -28,4 +28,7 @@ public interface HamburgerDao {
     List<Ingredienti> getContorni();
 
     List<Ingredienti> getBevande();
+
+
+    boolean deleteIngrediente(String nome, String authorization);
 }

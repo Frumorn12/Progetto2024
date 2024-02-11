@@ -30,6 +30,7 @@ import {TabellaOrdiniComponent} from "./tabella-ordini/tabella-ordini.component"
 import {AuthGuardAdminServiceService} from "./auth-guard-admin-service.service";
 import {PrenotazioniAdminComponent} from "./prenotazioni-admin/prenotazioni-admin.component";
 import {PrenotazioneUtenteComponent} from "./prenotazione-utente/prenotazione-utente.component";
+import {TabellaSegnalazioniComponent} from "./tabella-segnalazioni/tabella-segnalazioni.component";
 const routes: Routes = [
   {"path" : "", component:HomeComponent},
   {"path" : "chi_siamo", component:ChiSiamoComponent},
@@ -58,6 +59,7 @@ const routes: Routes = [
   {"path" : "ordini", component:TabellaOrdiniComponent, canActivate:[AuthGuardService]},
   {"path" : "prenotazioni_admin", component:PrenotazioniAdminComponent, canActivate:[AuthGuardAdminServiceService]},
   {"path" : "prenotazioni_utenti", component:PrenotazioneUtenteComponent, canActivate:[AuthGuardService]},
+  {'path' : "tabella-segnalazioni", component:TabellaSegnalazioniComponent, canActivate:[AuthGuardAdminServiceService]},
 
 
   {"path" : "html/:name", component:HtmlCreateComponent},
